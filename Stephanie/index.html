@@ -13,19 +13,39 @@
 </head>
 <body>
 
-  <!-- ================= LOADING SCREEN ================= -->
+  <!-- ================= LOADING SCREEN (GREEN → PURPLE CROSSFADE) ================= -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-content">
-      <div class="loader-planet">
-        <div class="loader-ring"></div>
-        <div class="loader-ring"></div>
-        <div class="loader-dot"></div>
-      </div>
-      <p class="loader-text">Loading the cosmos...</p>
-      <div class="loader-progress">
-        <div class="loader-progress-fill"></div>
+
+    <!-- Green Layer (starting theme — from team page) -->
+    <div class="loader-layer loader-layer-green">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Loading the cosmos...</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
       </div>
     </div>
+
+    <!-- Purple Layer (target theme — Stephanie's page) -->
+    <div class="loader-layer loader-layer-purple">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Welcome to my portfolio</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ================= CURSOR TRAIL CANVAS ================= -->
@@ -142,7 +162,6 @@
       <div class="orbit-star star-3" aria-hidden="true"></div>
 
       <div class="image-circle">
-        <!-- STEPHANIE UPDATE MO TO: Image path (kapag may picture na) -->
         <img src="../images/person4.jpg" alt="Stephanie Nicole S. Suelto">
       </div>
 
@@ -176,22 +195,18 @@
 
         <div class="stats-grid" id="statsGrid">
           <div class="stat-card">
-            <!-- STEPHANIE UPDATE MO TO: Years Coding -->
             <div class="stat-number" data-target="2" data-suffix="+">0</div>
             <div class="stat-label">Years Coding</div>
           </div>
           <div class="stat-card">
-            <!-- STEPHANIE UPDATE MO TO: Projects Built -->
             <div class="stat-number" data-target="10" data-suffix="+">0</div>
             <div class="stat-label">Projects Built</div>
           </div>
           <div class="stat-card">
-            <!-- STEPHANIE UPDATE MO TO: Tech Learned -->
             <div class="stat-number" data-target="5" data-suffix="">0</div>
             <div class="stat-label">Tech Learned</div>
           </div>
           <div class="stat-card">
-            <!-- STEPHANIE UPDATE MO TO: Dedication percentage -->
             <div class="stat-number" data-target="100" data-suffix="%">0</div>
             <div class="stat-label">Dedication</div>
           </div>
@@ -208,12 +223,10 @@
         </div>
         <div class="info-item">
           <span>Field</span>
-          <!-- STEPHANIE UPDATE MO TO: Field/Course -->
           <strong>Information Technology</strong>
         </div>
         <div class="info-item">
           <span>Location</span>
-          <!-- STEPHANIE UPDATE MO TO: Location -->
           <strong>Manila, Philippines</strong>
         </div>
       </div>
@@ -230,17 +243,11 @@
 
     <div class="timeline">
 
-      <!-- PRESENT — STEPHANIE UPDATE MO TO -->
-      <a
-        href="#"
-        class="timeline-item"
-      >
+      <a href="#" class="timeline-item">
         <div class="timeline-number">01</div>
         <div class="timeline-content">
           <span class="timeline-badge">Present</span>
-          <!-- STEPHANIE UPDATE MO TO: Current school name -->
           <h3>Current School Name</h3>
-          <!-- STEPHANIE UPDATE MO TO: Program / Course description -->
           <p>Program / Course description — i-update ito ni Stephanie.</p>
           <span class="timeline-location">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -251,17 +258,11 @@
         </div>
       </a>
 
-      <!-- PREVIOUS — STEPHANIE UPDATE MO TO -->
-      <a
-        href="#"
-        class="timeline-item"
-      >
+      <a href="#" class="timeline-item">
         <div class="timeline-number">02</div>
         <div class="timeline-content">
           <span class="timeline-badge">Previous</span>
-          <!-- STEPHANIE UPDATE MO TO: Previous school name -->
           <h3>Previous School Name</h3>
-          <!-- STEPHANIE UPDATE MO TO: Previous education description -->
           <p>Previous education description — i-update ito ni Stephanie.</p>
           <span class="timeline-location">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -284,7 +285,6 @@
     </div>
     <div class="skills-grid">
 
-      <!-- STEPHANIE UPDATE MO TO: Skill 1 + percentage -->
       <div class="skill-card" style="--level: 85%;">
         <span>01</span>
         <h3>Frontend Development</h3>
@@ -293,7 +293,6 @@
         <small class="progress-label">85%</small>
       </div>
 
-      <!-- STEPHANIE UPDATE MO TO: Skill 2 + percentage -->
       <div class="skill-card" style="--level: 80%;">
         <span>02</span>
         <h3>UI/UX Design</h3>
@@ -302,7 +301,6 @@
         <small class="progress-label">80%</small>
       </div>
 
-      <!-- STEPHANIE UPDATE MO TO: Skill 3 + percentage -->
       <div class="skill-card" style="--level: 70%;">
         <span>03</span>
         <h3>Programming</h3>
@@ -311,7 +309,6 @@
         <small class="progress-label">70%</small>
       </div>
 
-      <!-- STEPHANIE UPDATE MO TO: Skill 4 + percentage -->
       <div class="skill-card" style="--level: 90%;">
         <span>04</span>
         <h3>Creativity</h3>
@@ -331,8 +328,6 @@
       <h2>Things I enjoy</h2>
     </div>
     <div class="hobbies-grid">
-
-      <!-- STEPHANIE UPDATE MO TO: Hobby 1 -->
       <div class="hobby">
         <div class="hobby-icon">
           <img src="../images/music.png" alt="Music">
@@ -340,8 +335,6 @@
         <h3>Music</h3>
         <p>Listening to music and discovering new songs.</p>
       </div>
-
-      <!-- STEPHANIE UPDATE MO TO: Hobby 2 -->
       <div class="hobby">
         <div class="hobby-icon">
           <img src="../images/learning.png" alt="Learning">
@@ -349,8 +342,6 @@
         <h3>Learning</h3>
         <p>Exploring new knowledge and technologies.</p>
       </div>
-
-      <!-- STEPHANIE UPDATE MO TO: Hobby 3 -->
       <div class="hobby">
         <div class="hobby-icon">
           <img src="../images/gaming.png" alt="Gaming">
@@ -358,8 +349,6 @@
         <h3>Gaming</h3>
         <p>Enjoying games during my free time.</p>
       </div>
-
-      <!-- STEPHANIE UPDATE MO TO: Hobby 4 -->
       <div class="hobby">
         <div class="hobby-icon">
           <img src="../images/sport.png" alt="Sports">
@@ -367,7 +356,6 @@
         <h3>Sports</h3>
         <p>Staying active through sports and activities.</p>
       </div>
-
     </div>
   </section>
 
@@ -379,8 +367,6 @@
       <h2>My works</h2>
     </div>
     <div class="projects-grid">
-
-      <!-- STEPHANIE UPDATE MO TO: Project 1 -->
       <article class="project-card">
         <div>
           <div class="project-number">01</div>
@@ -390,8 +376,6 @@
         </div>
         <a href="#" class="project-link">View project →</a>
       </article>
-
-      <!-- STEPHANIE UPDATE MO TO: Project 2 -->
       <article class="project-card">
         <div>
           <div class="project-number">02</div>
@@ -401,7 +385,6 @@
         </div>
         <a href="#" class="project-link">View project →</a>
       </article>
-
     </div>
   </section>
 
@@ -461,14 +444,12 @@
       </div>
 
       <div class="contact-actions">
-        <!-- STEPHANIE UPDATE MO TO: LinkedIn URL -->
         <a href="#" class="cssbuttons-io" target="_blank" rel="noopener noreferrer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.2em" height="1.2em">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>
           <span>Connect on LinkedIn</span>
         </a>
-        <!-- STEPHANIE UPDATE MO TO: Copy link data (LinkedIn URL) -->
         <button class="copy-link" data-copy="#" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -512,7 +493,7 @@
 
       window.addEventListener('load', function () {
         const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, 1200 - elapsed);
+        const remaining = Math.max(0, 2800 - elapsed);
 
         setTimeout(function () {
           loader.classList.add('loaded');
@@ -520,7 +501,7 @@
 
           setTimeout(function () {
             loader.style.display = 'none';
-          }, 800);
+          }, 900);
         }, remaining);
       });
 
@@ -530,13 +511,13 @@
           document.body.classList.add('loaded');
           setTimeout(function () {
             loader.style.display = 'none';
-          }, 800);
+          }, 900);
         }
-      }, 4000);
+      }, 5000);
     })();
 
 
-    /* ============ 1. CURSOR TRAIL (cosmic line) ============ */
+    /* ============ 1. CURSOR TRAIL (PURPLE COSMIC LINE) ============ */
     (function () {
       const canvas = document.getElementById('cursorTrail');
       if (!canvas) return;
@@ -613,13 +594,14 @@
           const alpha = point.life;
           const size = point.size * point.life;
 
+          /* 💜 PURPLE trail colors */
           const gradient = ctx.createRadialGradient(
             point.x, point.y, 0,
             point.x, point.y, size * 3
           );
-          gradient.addColorStop(0, `rgba(168, 213, 178, ${alpha * 0.9})`);
-          gradient.addColorStop(0.4, `rgba(109, 184, 138, ${alpha * 0.5})`);
-          gradient.addColorStop(1, 'rgba(74, 140, 107, 0)');
+          gradient.addColorStop(0, `rgba(199, 125, 255, ${alpha * 0.9})`);
+          gradient.addColorStop(0.4, `rgba(123, 47, 168, ${alpha * 0.5})`);
+          gradient.addColorStop(1, 'rgba(74, 26, 107, 0)');
 
           ctx.beginPath();
           ctx.fillStyle = gradient;
@@ -649,9 +631,9 @@
           const lineGradient = ctx.createLinearGradient(
             first.x, first.y, last.x, last.y
           );
-          lineGradient.addColorStop(0, 'rgba(168, 213, 178, 0)');
-          lineGradient.addColorStop(0.5, 'rgba(168, 213, 178, 0.3)');
-          lineGradient.addColorStop(1, 'rgba(168, 213, 178, 0)');
+          lineGradient.addColorStop(0, 'rgba(199, 125, 255, 0)');
+          lineGradient.addColorStop(0.5, 'rgba(199, 125, 255, 0.3)');
+          lineGradient.addColorStop(1, 'rgba(199, 125, 255, 0)');
 
           ctx.strokeStyle = lineGradient;
           ctx.lineWidth = 1.5;
@@ -892,7 +874,6 @@
       const submitBtn = document.getElementById('submitBtn');
       if (!form) return;
 
-      // STEPHANIE UPDATE MO TO: Formspree endpoint
       const FORMSPREE_ENDPOINT = '';
 
       const validators = {
@@ -923,13 +904,8 @@
         }
       };
 
-      function getFieldWrapper(input) {
-        return input.closest('.form-group');
-      }
-
-      function getErrorSpan(fieldName) {
-        return form.querySelector('[data-error-for="' + fieldName + '"]');
-      }
+      function getFieldWrapper(input) { return input.closest('.form-group'); }
+      function getErrorSpan(fieldName) { return form.querySelector('[data-error-for="' + fieldName + '"]'); }
 
       function showError(fieldName, message) {
         const input = form.querySelector('[name="' + fieldName + '"]');
@@ -950,45 +926,30 @@
       function validateField(fieldName) {
         const input = form.querySelector('[name="' + fieldName + '"]');
         if (!input) return true;
-
         const error = validators[fieldName](input.value);
-        if (error) {
-          showError(fieldName, error);
-          return false;
-        } else {
-          clearError(fieldName);
-          return true;
-        }
+        if (error) { showError(fieldName, error); return false; }
+        else { clearError(fieldName); return true; }
       }
 
       Object.keys(validators).forEach(function (fieldName) {
         const input = form.querySelector('[name="' + fieldName + '"]');
         if (!input) return;
-
         input.addEventListener('blur', function () {
-          if (input.value.trim()) {
-            validateField(fieldName);
-          }
+          if (input.value.trim()) validateField(fieldName);
         });
-
         input.addEventListener('input', function () {
-          if (input.closest('.form-group').classList.contains('has-error')) {
-            validateField(fieldName);
-          }
+          if (input.closest('.form-group').classList.contains('has-error')) validateField(fieldName);
         });
       });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-
         let isValid = true;
         let firstInvalidField = null;
 
         Object.keys(validators).forEach(function (fieldName) {
           const fieldValid = validateField(fieldName);
-          if (!fieldValid && !firstInvalidField) {
-            firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
-          }
+          if (!fieldValid && !firstInvalidField) firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
           if (!fieldValid) isValid = false;
         });
 
@@ -1006,59 +967,12 @@
             successBox.classList.add('show');
             form.reset();
             Object.keys(validators).forEach(clearError);
-
             submitBtn.disabled = false;
             submitBtn.querySelector('span').textContent = originalText;
-
-            setTimeout(function () {
-              successBox.classList.remove('show');
-            }, 5000);
+            setTimeout(function () { successBox.classList.remove('show'); }, 5000);
           }, 900);
           return;
         }
-
-        submitBtn.disabled = true;
-        const originalText = submitBtn.querySelector('span').textContent;
-        submitBtn.querySelector('span').textContent = 'Sending...';
-
-        fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            subject: form.subject.value.trim(),
-            message: form.message.value.trim()
-          })
-        })
-        .then(function (response) {
-          if (response.ok) {
-            successBox.classList.add('show');
-            form.reset();
-            Object.keys(validators).forEach(clearError);
-
-            setTimeout(function () {
-              successBox.classList.remove('show');
-            }, 5000);
-          } else {
-            return response.json().then(function (data) {
-              const errorMsg = (data.errors && data.errors[0] && data.errors[0].message)
-                ? data.errors[0].message
-                : 'Something went wrong. Please try again.';
-              alert('Error: ' + errorMsg);
-            });
-          }
-        })
-        .catch(function (error) {
-          alert('Network error: ' + error.message);
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.querySelector('span').textContent = originalText;
-        });
       });
     })();
   </script>
