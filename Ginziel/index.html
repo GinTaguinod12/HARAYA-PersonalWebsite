@@ -13,21 +13,40 @@
 </head>
 <body>
 
-  <!-- ================= LOADING SCREEN ================= -->
+  <!-- ================= LOADING SCREEN (GREEN → BLUE CROSSFADE) ================= -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-content">
-      <div class="loader-planet">
-        <div class="loader-ring"></div>
-        <div class="loader-ring"></div>
-        <div class="loader-dot"></div>
-      </div>
-      <p class="loader-text">Loading the cosmos...</p>
-      <div class="loader-progress">
-        <div class="loader-progress-fill"></div>
+
+    <!-- Green Layer (starting theme — same as team page) -->
+    <div class="loader-layer loader-layer-green">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Loading the cosmos...</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
       </div>
     </div>
-  </div>
 
+    <!-- Blue Layer (target theme — same as personal page) -->
+    <div class="loader-layer loader-layer-blue">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Welcome to my portfolio</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <!-- ================= CURSOR TRAIL CANVAS ================= -->
   <canvas class="cursor-trail" id="cursorTrail" aria-hidden="true"></canvas>
@@ -365,7 +384,7 @@
           <h3>Spooky Pie</h3>
           <p>A website inspired by Spotify's design and functionality.</p>
         </div>
-        <a href="file:///C:/Users/Ginziel/OneDrive%20-%20National%20University/Desktop/Playlist%20Music/Playlist%20Music.html" class="project-link">View project →</a>
+        <a href="https://vocal-beijinho-c3cc0d.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
       </article>
       <article class="project-card">
         <div>
@@ -374,7 +393,25 @@
           <h3>Psychology Counseling System</h3>
           <p>An academic project created as part of my learning experience and development journey in Database.</p>
         </div>
-        <a href="https://youtu.be/XBjQ4hPPD3E?si=sST_iS4uEWqhHUvf" class="project-link" target="_blank">View project →</a>
+        <a href="https://youtu.be/XBjQ4hPPD3E?si=sST_iS4uEWqhHUvf" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
+      </article>
+      <article class="project-card">
+        <div>
+          <div class="project-number">03</div>
+          <span>Academic Project</span>
+          <h3>Unwind</h3>
+          <p>A mobile application for organizing, planning, and managing personal wellness routines.</p>
+        </div>
+        <a href="https://drive.google.com/file/d/1_iDrYx1C0KV5TFJDhiGGFWPs2gB34E8d/view?usp=sharing" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
+      </article>
+      <article class="project-card">
+        <div>
+          <div class="project-number">04</div>
+          <span>Academic Project</span>
+          <h3>PetCare System</h3>
+          <p>A System for booking appointment, managing pet care schedules, and providing veterinary information.</p>
+        </div>
+        <a href="https://drive.google.com/file/d/1GV4DQZVwjSjrz0bAVOkGhdb7X-YRDP07/view?usp=sharing" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
       </article>
     </div>
   </section>
@@ -484,7 +521,7 @@
 
       window.addEventListener('load', function () {
         const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, 1200 - elapsed);
+        const remaining = Math.max(0, 2800 - elapsed);
 
         setTimeout(function () {
           loader.classList.add('loaded');
@@ -492,7 +529,7 @@
 
           setTimeout(function () {
             loader.style.display = 'none';
-          }, 800);
+          }, 900);
         }, remaining);
       });
 
@@ -502,84 +539,13 @@
           document.body.classList.add('loaded');
           setTimeout(function () {
             loader.style.display = 'none';
-          }, 800);
+          }, 900);
         }
-      }, 4000);
+      }, 5000);
     })();
 
 
-    /* ============ 1. CUSTOM CURSOR ============ */
-    (function () {
-      const dot = document.querySelector('.cursor-dot');
-      const ring = document.querySelector('.cursor-ring');
-      if (!dot || !ring) return;
-
-      const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-      if (!hasHover) {
-        dot.style.display = 'none';
-        ring.style.display = 'none';
-        return;
-      }
-
-      let mouseX = 0;
-      let mouseY = 0;
-      let ringX = 0;
-      let ringY = 0;
-      let dotX = 0;
-      let dotY = 0;
-
-      document.addEventListener('mousemove', function (e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        dotX = mouseX;
-        dotY = mouseY;
-        dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-      });
-
-      function animateRing() {
-        const speed = 0.15;
-        ringX += (mouseX - ringX) * speed;
-        ringY += (mouseY - ringY) * speed;
-        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-        requestAnimationFrame(animateRing);
-      }
-      animateRing();
-
-      const hoverElements = document.querySelectorAll('a, button, .skill-card, .hobby, .project-card, .stat-card, input, textarea, .copy-link');
-
-      hoverElements.forEach(function (el) {
-        el.addEventListener('mouseenter', function () {
-          ring.classList.add('cursor-hover');
-          dot.classList.add('cursor-hover');
-        });
-        el.addEventListener('mouseleave', function () {
-          ring.classList.remove('cursor-hover');
-          dot.classList.remove('cursor-hover');
-        });
-      });
-
-      document.addEventListener('mouseleave', function () {
-        dot.style.opacity = '0';
-        ring.style.opacity = '0';
-      });
-      document.addEventListener('mouseenter', function () {
-        dot.style.opacity = '1';
-        ring.style.opacity = '1';
-      });
-
-      document.addEventListener('mousedown', function () {
-        ring.classList.add('cursor-click');
-        dot.classList.add('cursor-click');
-      });
-      document.addEventListener('mouseup', function () {
-        ring.classList.remove('cursor-click');
-        dot.classList.remove('cursor-click');
-      });
-    })();
-
-
-    /* ============ 1.5 CURSOR TRAIL (cosmic line) ============ */
+    /* ============ 1. CURSOR TRAIL (NAVY BLUE COSMIC LINE) ============ */
     (function () {
       const canvas = document.getElementById('cursorTrail');
       if (!canvas) return;
@@ -656,13 +622,14 @@
           const alpha = point.life;
           const size = point.size * point.life;
 
+          /* 🔵 NAVY BLUE trail colors */
           const gradient = ctx.createRadialGradient(
             point.x, point.y, 0,
             point.x, point.y, size * 3
           );
-          gradient.addColorStop(0, `rgba(168, 213, 178, ${alpha * 0.9})`);
-          gradient.addColorStop(0.4, `rgba(109, 184, 138, ${alpha * 0.5})`);
-          gradient.addColorStop(1, 'rgba(74, 140, 107, 0)');
+          gradient.addColorStop(0, `rgba(127, 179, 213, ${alpha * 0.9})`);
+          gradient.addColorStop(0.4, `rgba(74, 122, 181, ${alpha * 0.5})`);
+          gradient.addColorStop(1, 'rgba(30, 58, 95, 0)');
 
           ctx.beginPath();
           ctx.fillStyle = gradient;
@@ -692,9 +659,9 @@
           const lineGradient = ctx.createLinearGradient(
             first.x, first.y, last.x, last.y
           );
-          lineGradient.addColorStop(0, 'rgba(168, 213, 178, 0)');
-          lineGradient.addColorStop(0.5, 'rgba(168, 213, 178, 0.3)');
-          lineGradient.addColorStop(1, 'rgba(168, 213, 178, 0)');
+          lineGradient.addColorStop(0, 'rgba(127, 179, 213, 0)');
+          lineGradient.addColorStop(0.5, 'rgba(127, 179, 213, 0.3)');
+          lineGradient.addColorStop(1, 'rgba(127, 179, 213, 0)');
 
           ctx.strokeStyle = lineGradient;
           ctx.lineWidth = 1.5;
@@ -857,6 +824,8 @@
       copyBtn.addEventListener('click', function () {
         const text = copyBtn.dataset.copy;
 
+        if (!text || text === '#') return;
+
         navigator.clipboard.writeText(text).then(function () {
           copyBtn.classList.add('copied');
           notification.classList.add('show');
@@ -963,13 +932,8 @@
         }
       };
 
-      function getFieldWrapper(input) {
-        return input.closest('.form-group');
-      }
-
-      function getErrorSpan(fieldName) {
-        return form.querySelector('[data-error-for="' + fieldName + '"]');
-      }
+      function getFieldWrapper(input) { return input.closest('.form-group'); }
+      function getErrorSpan(fieldName) { return form.querySelector('[data-error-for="' + fieldName + '"]'); }
 
       function showError(fieldName, message) {
         const input = form.querySelector('[name="' + fieldName + '"]');
@@ -990,45 +954,30 @@
       function validateField(fieldName) {
         const input = form.querySelector('[name="' + fieldName + '"]');
         if (!input) return true;
-
         const error = validators[fieldName](input.value);
-        if (error) {
-          showError(fieldName, error);
-          return false;
-        } else {
-          clearError(fieldName);
-          return true;
-        }
+        if (error) { showError(fieldName, error); return false; }
+        else { clearError(fieldName); return true; }
       }
 
       Object.keys(validators).forEach(function (fieldName) {
         const input = form.querySelector('[name="' + fieldName + '"]');
         if (!input) return;
-
         input.addEventListener('blur', function () {
-          if (input.value.trim()) {
-            validateField(fieldName);
-          }
+          if (input.value.trim()) validateField(fieldName);
         });
-
         input.addEventListener('input', function () {
-          if (input.closest('.form-group').classList.contains('has-error')) {
-            validateField(fieldName);
-          }
+          if (input.closest('.form-group').classList.contains('has-error')) validateField(fieldName);
         });
       });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-
         let isValid = true;
         let firstInvalidField = null;
 
         Object.keys(validators).forEach(function (fieldName) {
           const fieldValid = validateField(fieldName);
-          if (!fieldValid && !firstInvalidField) {
-            firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
-          }
+          if (!fieldValid && !firstInvalidField) firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
           if (!fieldValid) isValid = false;
         });
 
