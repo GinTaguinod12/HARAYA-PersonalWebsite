@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the Haraya Team — a group of students showcasing their personal portfolios.">
+  <title>HARAYA Team · Our Personal Websites</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= LOADING SCREEN ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-planet">
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <p class="loader-text">Loading the cosmos...</p>
+      <div class="loader-progress">
+        <div class="loader-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CURSOR TRAIL CANVAS ================= -->
+  <canvas class="cursor-trail" id="cursorTrail" aria-hidden="true"></canvas>
+
+  <!-- ================= SCROLL PROGRESS BAR ================= -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-fill"></div>
+  </div>
+
+  <!-- ================= COSMIC BACKGROUND ================= -->
+  <div class="cosmic-bg" aria-hidden="true">
+    <div class="starfield starfield-far"></div>
+    <div class="starfield starfield-near"></div>
+
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <svg class="constellation" viewBox="0 0 1000 800" preserveAspectRatio="none">
+      <line x1="150" y1="120" x2="280" y2="220" />
+      <line x1="280" y1="220" x2="420" y2="160" />
+      <line x1="420" y1="160" x2="540" y2="280" />
+      <line x1="540" y1="280" x2="700" y2="220" />
+      <line x1="700" y1="220" x2="850" y2="320" />
+      <line x1="280" y1="220" x2="340" y2="380" />
+      <line x1="340" y1="380" x2="200" y2="520" />
+      <line x1="340" y1="380" x2="540" y2="480" />
+      <line x1="540" y1="480" x2="720" y2="520" />
+      <line x1="720" y1="520" x2="860" y2="620" />
+    </svg>
+
+    <span class="constellation-node" style="top: 15%; left: 15%;"></span>
+    <span class="constellation-node" style="top: 27%; left: 28%;"></span>
+    <span class="constellation-node" style="top: 20%; left: 42%;"></span>
+    <span class="constellation-node" style="top: 35%; left: 54%;"></span>
+    <span class="constellation-node" style="top: 27%; left: 70%;"></span>
+    <span class="constellation-node" style="top: 40%; left: 85%;"></span>
+    <span class="constellation-node" style="top: 47%; left: 34%;"></span>
+    <span class="constellation-node" style="top: 65%; left: 20%;"></span>
+    <span class="constellation-node" style="top: 60%; left: 54%;"></span>
+    <span class="constellation-node" style="top: 65%; left: 72%;"></span>
+    <span class="constellation-node" style="top: 77%; left: 86%;"></span>
+
+    <span class="cosmic-dust dust-1"></span>
+    <span class="cosmic-dust dust-2"></span>
+    <span class="cosmic-dust dust-3"></span>
+    <span class="cosmic-dust dust-4"></span>
+    <span class="cosmic-dust dust-5"></span>
+    <span class="cosmic-dust dust-6"></span>
+    <span class="cosmic-dust dust-7"></span>
+    <span class="cosmic-dust dust-8"></span>
+
+    <div class="shooting-star shooting-1"></div>
+    <div class="shooting-star shooting-2"></div>
+    <div class="shooting-star shooting-3"></div>
+
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+  </div>
+
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <a href="#home" class="logo">
+      <span>HARAYA</span> TEAM
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#home" data-section="home">Home</a>
+      <a href="#about" data-section="about">About</a>
+      <a href="#members" data-section="members">Members</a>
+    </nav>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="small-title">Welcome to our website</p>
+      <h1>
+        Meet Our
+        <span>Creative Team</span>
+      </h1>
+      <p class="hero-description">
+        Explore the personal websites of our five team members.
+        Click on a member to learn more about their skills,
+        interests, projects, and experiences.
+      </p>
+      <a href="#members" class="cssbuttons-io">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>Meet the Team</span>
+      </a>
+    </div>
+
+    <div class="hero-visual">
+      <div class="cosmic-glow" aria-hidden="true"></div>
+
+      <div class="image-orbit orbit-1"></div>
+      <div class="image-orbit orbit-2"></div>
+
+      <div class="orbit-star star-1" aria-hidden="true"></div>
+      <div class="orbit-star star-2" aria-hidden="true"></div>
+      <div class="orbit-star star-3" aria-hidden="true"></div>
+
+      <div class="mini-planet planet-1" aria-hidden="true"></div>
+      <div class="mini-planet planet-2" aria-hidden="true"></div>
+
+      <div class="logo-container">
+        <img src="images/haraya.png" alt="Haraya Team Logo">
+      </div>
+
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+    </div>
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="about">
+    <div class="section-title">
+      <p>Who we are</p>
+      <h2>About Our Team</h2>
+    </div>
+
+    <div class="about-content">
+      <p>
+        We are a team of students with different interests,
+        skills, and experiences. This website serves as a
+        central portfolio where you can explore each member's
+        personal website.
+      </p>
+      <p>
+        Each member has their own personal page with the same
+        overall design while showcasing their unique
+        personality, skills, hobbies, and projects.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ================= MEMBERS ================= -->
+  <section id="members" class="members">
+    <div class="section-title">
+      <p>Meet the team</p>
+      <h2>Our Members</h2>
+      <span>Click a member to visit their personal website.</span>
+    </div>
+
+    <div class="member-grid">
+
+      <!-- PERSON 1 -->
+      <a href="Jacey/index.html" class="member-card">
+        <span class="star star-1" aria-hidden="true"></span>
+        <span class="star star-2" aria-hidden="true"></span>
+        <span class="star star-3" aria-hidden="true"></span>
+        <span class="star star-4" aria-hidden="true"></span>
+
+        <div class="member-card-inner">
+          <div class="member-image">
+            <img src="images/Jacey.png" alt="Jacey Chen B. Aguirre">
+          </div>
+          <div class="member-info">
+            <span class="member-number">01</span>
+            <h3>Jacey Chen B. Aguirre</h3>
+            <p>Student • Developer / Project Manager</p>
+            <span class="view-profile">
+              View Profile <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- PERSON 2 -->
+      <a href="Hezekiah/index.html" class="member-card">
+        <span class="star star-1" aria-hidden="true"></span>
+        <span class="star star-2" aria-hidden="true"></span>
+        <span class="star star-3" aria-hidden="true"></span>
+        <span class="star star-4" aria-hidden="true"></span>
+
+        <div class="member-card-inner">
+          <div class="member-image">
+            <img src="images/Hezekiah.png" alt="Hezekiah A. Magalona">
+          </div>
+          <div class="member-info">
+            <span class="member-number">02</span>
+            <h3>Hezekiah A. Magalona</h3>
+            <p>Student • Developer / UI Designer</p>
+            <span class="view-profile">
+              View Profile <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- PERSON 3 -->
+      <a href="Fiona/index.html" class="member-card">
+        <span class="star star-1" aria-hidden="true"></span>
+        <span class="star star-2" aria-hidden="true"></span>
+        <span class="star star-3" aria-hidden="true"></span>
+        <span class="star star-4" aria-hidden="true"></span>
+
+        <div class="member-card-inner">
+          <div class="member-image">
+            <img src="images/Fiona.png" alt="Fiona Mai R. Recaña">
+          </div>
+          <div class="member-info">
+            <span class="member-number">03</span>
+            <h3>Fiona Mai R. Recaña</h3>
+            <p>Student • Programmer / Backend</p>
+            <span class="view-profile">
+              View Profile <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- PERSON 4 -->
+      <a href="stephanie/index.html" class="member-card">
+        <span class="star star-1" aria-hidden="true"></span>
+        <span class="star star-2" aria-hidden="true"></span>
+        <span class="star star-3" aria-hidden="true"></span>
+        <span class="star star-4" aria-hidden="true"></span>
+
+        <div class="member-card-inner">
+          <div class="member-image">
+            <img src="images/person4.jpg" alt="Stephanie Nicole S. Suelto">
+          </div>
+          <div class="member-info">
+            <span class="member-number">04</span>
+            <h3>Stephanie Nicole S. Suelto</h3>
+            <p>Student • Creative / Frontend</p>
+            <span class="view-profile">
+              View Profile <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- PERSON 5 -->
+      <a href="ginziel/index.html" class="member-card">
+        <span class="star star-1" aria-hidden="true"></span>
+        <span class="star star-2" aria-hidden="true"></span>
+        <span class="star star-3" aria-hidden="true"></span>
+        <span class="star star-4" aria-hidden="true"></span>
+
+        <div class="member-card-inner">
+          <div class="member-image">
+            <img src="images/ginziel.png" alt="Ginziel S. Taguinod">
+          </div>
+          <div class="member-info">
+            <span class="member-number">05</span>
+            <h3>Ginziel S. Taguinod</h3>
+            <p>Student • Mobile App Developer</p>
+            <span class="view-profile">
+              View Profile <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-logo">
+      <span>HARAYA</span> TEAM
+    </div>
+    <p>© 2026 Our Team. All Rights Reserved.</p>
+  </footer>
+
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* ============ 1. LOADING SCREEN ============ */
+    (function () {
+      const loader = document.getElementById('loader');
+      if (!loader) return;
+
+      const startTime = Date.now();
+
+      window.addEventListener('load', function () {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, 1200 - elapsed);
+
+        setTimeout(function () {
+          loader.classList.add('loaded');
+          document.body.classList.add('loaded');
+
+          setTimeout(function () {
+            loader.style.display = 'none';
+          }, 800);
+        }, remaining);
+      });
+
+      setTimeout(function () {
+        if (!loader.classList.contains('loaded')) {
+          loader.classList.add('loaded');
+          document.body.classList.add('loaded');
+          setTimeout(function () {
+            loader.style.display = 'none';
+          }, 800);
+        }
+      }, 4000);
+    })();
+
+
+    /* ============ 2. CURSOR TRAIL (cosmic line) ============ */
+    (function () {
+      const canvas = document.getElementById('cursorTrail');
+      if (!canvas) return;
+
+      const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (!hasHover) {
+        canvas.style.display = 'none';
+        return;
+      }
+
+      const ctx = canvas.getContext('2d');
+      let width = 0;
+      let height = 0;
+      let dpr = window.devicePixelRatio || 1;
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.scale(dpr, dpr);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const trail = [];
+      const MAX_LENGTH = 30;
+      const FADE_SPEED = 0.03;
+
+      let mouseX = 0;
+      let mouseY = 0;
+      let lastMouseX = 0;
+      let lastMouseY = 0;
+
+      document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        const dx = mouseX - lastMouseX;
+        const dy = mouseY - lastMouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist > 2) {
+          trail.push({
+            x: mouseX,
+            y: mouseY,
+            life: 1,
+            size: Math.min(6, 2 + dist * 0.15)
+          });
+
+          if (trail.length > MAX_LENGTH) {
+            trail.shift();
+          }
+
+          lastMouseX = mouseX;
+          lastMouseY = mouseY;
+        }
+      });
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = trail.length - 1; i >= 0; i--) {
+          const point = trail[i];
+          point.life -= FADE_SPEED;
+
+          if (point.life <= 0) {
+            trail.splice(i, 1);
+            continue;
+          }
+
+          const alpha = point.life;
+          const size = point.size * point.life;
+
+          const gradient = ctx.createRadialGradient(
+            point.x, point.y, 0,
+            point.x, point.y, size * 3
+          );
+          gradient.addColorStop(0, `rgba(168, 213, 178, ${alpha * 0.9})`);
+          gradient.addColorStop(0.4, `rgba(109, 184, 138, ${alpha * 0.5})`);
+          gradient.addColorStop(1, 'rgba(74, 140, 107, 0)');
+
+          ctx.beginPath();
+          ctx.fillStyle = gradient;
+          ctx.arc(point.x, point.y, size * 3, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.8})`;
+          ctx.arc(point.x, point.y, size * 0.6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        if (trail.length > 1) {
+          ctx.beginPath();
+          ctx.moveTo(trail[0].x, trail[0].y);
+
+          for (let i = 1; i < trail.length; i++) {
+            const p = trail[i];
+            const prev = trail[i - 1];
+            const midX = (p.x + prev.x) / 2;
+            const midY = (p.y + prev.y) / 2;
+            ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+          }
+
+          const last = trail[trail.length - 1];
+          const first = trail[0];
+          const lineGradient = ctx.createLinearGradient(
+            first.x, first.y, last.x, last.y
+          );
+          lineGradient.addColorStop(0, 'rgba(168, 213, 178, 0)');
+          lineGradient.addColorStop(0.5, 'rgba(168, 213, 178, 0.3)');
+          lineGradient.addColorStop(1, 'rgba(168, 213, 178, 0)');
+
+          ctx.strokeStyle = lineGradient;
+          ctx.lineWidth = 1.5;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+    })();
+
+
+    /* ============ 3. NAVBAR AUTO-HIDE ============ */
+    (function () {
+      const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+
+      let lastScrollY = window.scrollY;
+      let isHoveringTop = false;
+      let ticking = false;
+      const SCROLL_THRESHOLD = 80;
+
+      document.addEventListener('mousemove', function (e) {
+        const isInTopZone = e.clientY < 100;
+        if (isInTopZone !== isHoveringTop) {
+          isHoveringTop = isInTopZone;
+          updateNavbar();
+        }
+      });
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateNavbar();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      function updateNavbar() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY < SCROLL_THRESHOLD) {
+          navbar.classList.remove('navbar-hidden');
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (isHoveringTop) {
+          navbar.classList.remove('navbar-hidden');
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (currentScrollY > lastScrollY) {
+          navbar.classList.add('navbar-hidden');
+        } else {
+          navbar.classList.remove('navbar-hidden');
+        }
+
+        lastScrollY = currentScrollY;
+      }
+    })();
+
+
+    /* ============ 4. SCROLL PROGRESS BAR ============ */
+    (function () {
+      const progressFill = document.querySelector('.scroll-progress-fill');
+      if (!progressFill) return;
+
+      let ticking = false;
+
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressFill.style.width = percent + '%';
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateProgress);
+          ticking = true;
+        }
+      });
+
+      updateProgress();
+    })();
+
+
+    /* ============ 5. ACTIVE SECTION HIGHLIGHT ============ */
+    (function () {
+      const navLinks = document.querySelectorAll('.navbar nav a[data-section]');
+      const sections = document.querySelectorAll('section[id]');
+      if (!navLinks.length || !sections.length) return;
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(function (link) {
+              link.classList.toggle('active', link.dataset.section === id);
+            });
+          }
+        });
+      }, {
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
+
+</body>
+</html>

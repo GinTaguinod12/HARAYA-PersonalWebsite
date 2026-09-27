@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stephanie Nicole S. Suelto — Student & future professional. Personal portfolio.">
+  <title>Stephanie · Cosmic Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= LOADING SCREEN ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-planet">
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <p class="loader-text">Loading the cosmos...</p>
+      <div class="loader-progress">
+        <div class="loader-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CURSOR TRAIL CANVAS ================= -->
+  <canvas class="cursor-trail" id="cursorTrail" aria-hidden="true"></canvas>
+
+  <!-- ================= SCROLL PROGRESS BAR ================= -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-fill"></div>
+  </div>
+
+  <!-- ================= COSMIC BACKGROUND ================= -->
+  <div class="cosmic-bg" aria-hidden="true">
+    <div class="starfield starfield-far"></div>
+    <div class="starfield starfield-near"></div>
+
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <svg class="constellation" viewBox="0 0 1000 800" preserveAspectRatio="none">
+      <line x1="150" y1="120" x2="280" y2="220" />
+      <line x1="280" y1="220" x2="420" y2="160" />
+      <line x1="420" y1="160" x2="540" y2="280" />
+      <line x1="540" y1="280" x2="700" y2="220" />
+      <line x1="700" y1="220" x2="850" y2="320" />
+      <line x1="280" y1="220" x2="340" y2="380" />
+      <line x1="340" y1="380" x2="200" y2="520" />
+      <line x1="340" y1="380" x2="540" y2="480" />
+      <line x1="540" y1="480" x2="720" y2="520" />
+      <line x1="720" y1="520" x2="860" y2="620" />
+    </svg>
+
+    <span class="constellation-node" style="top: 15%; left: 15%;"></span>
+    <span class="constellation-node" style="top: 27%; left: 28%;"></span>
+    <span class="constellation-node" style="top: 20%; left: 42%;"></span>
+    <span class="constellation-node" style="top: 35%; left: 54%;"></span>
+    <span class="constellation-node" style="top: 27%; left: 70%;"></span>
+    <span class="constellation-node" style="top: 40%; left: 85%;"></span>
+    <span class="constellation-node" style="top: 47%; left: 34%;"></span>
+    <span class="constellation-node" style="top: 65%; left: 20%;"></span>
+    <span class="constellation-node" style="top: 60%; left: 54%;"></span>
+    <span class="constellation-node" style="top: 65%; left: 72%;"></span>
+    <span class="constellation-node" style="top: 77%; left: 86%;"></span>
+
+    <span class="cosmic-dust dust-1"></span>
+    <span class="cosmic-dust dust-2"></span>
+    <span class="cosmic-dust dust-3"></span>
+    <span class="cosmic-dust dust-4"></span>
+    <span class="cosmic-dust dust-5"></span>
+    <span class="cosmic-dust dust-6"></span>
+    <span class="cosmic-dust dust-7"></span>
+    <span class="cosmic-dust dust-8"></span>
+
+    <div class="shooting-star shooting-1"></div>
+    <div class="shooting-star shooting-2"></div>
+    <div class="shooting-star shooting-3"></div>
+
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+  </div>
+
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <a href="../index.html" class="logo">S<span>.</span></a>
+    <nav>
+      <a href="#home" data-section="home">Home</a>
+      <a href="#about" data-section="about">About</a>
+      <a href="#skills" data-section="skills">Skills</a>
+      <a href="#projects" data-section="projects">Projects</a>
+      <a href="#contact" data-section="contact">Contact</a>
+    </nav>
+    <a href="../index.html" class="back-button">← Team</a>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="eyebrow reveal reveal-delay-1">personal portfolio</p>
+      <h1 class="reveal reveal-delay-2">Hi, I'm <span class="gradient-text">Stephanie.</span></h1>
+      <h2 class="reveal reveal-delay-3">Student &amp; future professional</h2>
+      <p class="intro reveal reveal-delay-4">
+        Welcome to my personal space — get to know my background,
+        explore my skills, interests, and the projects I've been
+        building along the way.
+      </p>
+      <div class="hero-buttons reveal reveal-delay-5">
+        <a href="#about" class="cssbuttons-io">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>Discover More</span>
+        </a>
+        <a href="#contact" class="secondary-button">Contact me</a>
+      </div>
+
+      <a href="#about" class="scroll-indicator reveal reveal-delay-6" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </div>
+
+    <div class="hero-image reveal reveal-delay-3">
+      <div class="cosmic-glow" aria-hidden="true"></div>
+
+      <div class="image-orbit orbit-1"></div>
+      <div class="image-orbit orbit-2"></div>
+
+      <div class="orbit-star star-1" aria-hidden="true"></div>
+      <div class="orbit-star star-2" aria-hidden="true"></div>
+      <div class="orbit-star star-3" aria-hidden="true"></div>
+
+      <div class="image-circle">
+        <!-- STEPHANIE UPDATE MO TO: Image path (kapag may picture na) -->
+        <img src="../images/person4.jpg" alt="Stephanie Nicole S. Suelto">
+      </div>
+
+      <div class="floating-card">
+        <span>04</span>
+        <p>Stephanie Nicole S. Suelto</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="about">
+    <div class="section-heading">
+      <p class="eyebrow">01 — about me</p>
+      <h2>Get to know Stephanie</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hello! I'm Stephanie, a student who is passionate about learning
+          new things and developing my skills. I enjoy exploring
+          different areas, working with others, and challenging myself
+          through new experiences.
+        </p>
+        <p>
+          This personal portfolio showcases my background, skills,
+          hobbies, interests, and projects. It represents who I am as
+          a student and what I hope to achieve in the future.
+        </p>
+
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <!-- STEPHANIE UPDATE MO TO: Years Coding -->
+            <div class="stat-number" data-target="2" data-suffix="+">0</div>
+            <div class="stat-label">Years Coding</div>
+          </div>
+          <div class="stat-card">
+            <!-- STEPHANIE UPDATE MO TO: Projects Built -->
+            <div class="stat-number" data-target="10" data-suffix="+">0</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-card">
+            <!-- STEPHANIE UPDATE MO TO: Tech Learned -->
+            <div class="stat-number" data-target="5" data-suffix="">0</div>
+            <div class="stat-label">Tech Learned</div>
+          </div>
+          <div class="stat-card">
+            <!-- STEPHANIE UPDATE MO TO: Dedication percentage -->
+            <div class="stat-number" data-target="100" data-suffix="%">0</div>
+            <div class="stat-label">Dedication</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-item">
+          <span>Name</span>
+          <strong>Stephanie Nicole S. Suelto</strong>
+        </div>
+        <div class="info-item">
+          <span>Occupation</span>
+          <strong>Student</strong>
+        </div>
+        <div class="info-item">
+          <span>Field</span>
+          <!-- STEPHANIE UPDATE MO TO: Field/Course -->
+          <strong>Information Technology</strong>
+        </div>
+        <div class="info-item">
+          <span>Location</span>
+          <!-- STEPHANIE UPDATE MO TO: Location -->
+          <strong>Manila, Philippines</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="education">
+    <div class="section-heading">
+      <p class="eyebrow">02 — education</p>
+      <h2>My educational journey</h2>
+    </div>
+
+    <div class="timeline">
+
+      <!-- PRESENT — STEPHANIE UPDATE MO TO -->
+      <a
+        href="#"
+        class="timeline-item"
+      >
+        <div class="timeline-number">01</div>
+        <div class="timeline-content">
+          <span class="timeline-badge">Present</span>
+          <!-- STEPHANIE UPDATE MO TO: Current school name -->
+          <h3>Current School Name</h3>
+          <!-- STEPHANIE UPDATE MO TO: Program / Course description -->
+          <p>Program / Course description — i-update ito ni Stephanie.</p>
+          <span class="timeline-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- PREVIOUS — STEPHANIE UPDATE MO TO -->
+      <a
+        href="#"
+        class="timeline-item"
+      >
+        <div class="timeline-number">02</div>
+        <div class="timeline-content">
+          <span class="timeline-badge">Previous</span>
+          <!-- STEPHANIE UPDATE MO TO: Previous school name -->
+          <h3>Previous School Name</h3>
+          <!-- STEPHANIE UPDATE MO TO: Previous education description -->
+          <p>Previous education description — i-update ito ni Stephanie.</p>
+          <span class="timeline-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="skills">
+    <div class="section-heading">
+      <p class="eyebrow">03 — my skills</p>
+      <h2>What I can do</h2>
+    </div>
+    <div class="skills-grid">
+
+      <!-- STEPHANIE UPDATE MO TO: Skill 1 + percentage -->
+      <div class="skill-card" style="--level: 85%;">
+        <span>01</span>
+        <h3>Frontend Development</h3>
+        <p>Building modern, responsive user interfaces with HTML, CSS, JavaScript, and modern frameworks.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">85%</small>
+      </div>
+
+      <!-- STEPHANIE UPDATE MO TO: Skill 2 + percentage -->
+      <div class="skill-card" style="--level: 80%;">
+        <span>02</span>
+        <h3>UI/UX Design</h3>
+        <p>Designing clean, user-friendly interfaces with a focus on visual hierarchy and accessibility.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">80%</small>
+      </div>
+
+      <!-- STEPHANIE UPDATE MO TO: Skill 3 + percentage -->
+      <div class="skill-card" style="--level: 70%;">
+        <span>03</span>
+        <h3>Programming</h3>
+        <p>Developing applications and solving problems with Java, Python, and modern frameworks.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">70%</small>
+      </div>
+
+      <!-- STEPHANIE UPDATE MO TO: Skill 4 + percentage -->
+      <div class="skill-card" style="--level: 90%;">
+        <span>04</span>
+        <h3>Creativity</h3>
+        <p>Bringing fresh ideas and creative approaches to design, content, and problem-solving.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">90%</small>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= HOBBIES / INTERESTS ================= -->
+  <section class="hobbies">
+    <div class="section-heading">
+      <p class="eyebrow">04 — my interests</p>
+      <h2>Things I enjoy</h2>
+    </div>
+    <div class="hobbies-grid">
+
+      <!-- STEPHANIE UPDATE MO TO: Hobby 1 -->
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/music.png" alt="Music">
+        </div>
+        <h3>Music</h3>
+        <p>Listening to music and discovering new songs.</p>
+      </div>
+
+      <!-- STEPHANIE UPDATE MO TO: Hobby 2 -->
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/learning.png" alt="Learning">
+        </div>
+        <h3>Learning</h3>
+        <p>Exploring new knowledge and technologies.</p>
+      </div>
+
+      <!-- STEPHANIE UPDATE MO TO: Hobby 3 -->
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/gaming.png" alt="Gaming">
+        </div>
+        <h3>Gaming</h3>
+        <p>Enjoying games during my free time.</p>
+      </div>
+
+      <!-- STEPHANIE UPDATE MO TO: Hobby 4 -->
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/sport.png" alt="Sports">
+        </div>
+        <h3>Sports</h3>
+        <p>Staying active through sports and activities.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="projects">
+    <div class="section-heading">
+      <p class="eyebrow">05 — projects</p>
+      <h2>My works</h2>
+    </div>
+    <div class="projects-grid">
+
+      <!-- STEPHANIE UPDATE MO TO: Project 1 -->
+      <article class="project-card">
+        <div>
+          <div class="project-number">01</div>
+          <span>Creative / Frontend</span>
+          <h3>Project Title</h3>
+          <p>Short description of the project — i-update ito ni Stephanie.</p>
+        </div>
+        <a href="#" class="project-link">View project →</a>
+      </article>
+
+      <!-- STEPHANIE UPDATE MO TO: Project 2 -->
+      <article class="project-card">
+        <div>
+          <div class="project-number">02</div>
+          <span>Academic Project</span>
+          <h3>Project Title</h3>
+          <p>Short description of the project — i-update ito ni Stephanie.</p>
+        </div>
+        <a href="#" class="project-link">View project →</a>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="contact">
+    <div class="contact-content">
+      <p class="eyebrow">06 — get in touch</p>
+      <h2>Let's connect.</h2>
+      <p>Have a question, project idea, or simply want to say hello? Feel free to reach out.</p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" autocomplete="name" required>
+            <span class="form-error" data-error-for="name"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="juan@example.com" autocomplete="email" required>
+            <span class="form-error" data-error-for="email"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Project inquiry, collaboration, etc." required>
+          <span class="form-error" data-error-for="subject"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
+          <span class="form-error" data-error-for="message"></span>
+        </div>
+
+        <button type="submit" class="cssbuttons-io" id="submitBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          <span>Send Message</span>
+        </button>
+
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span>Message sent successfully! I'll get back to you soon.</span>
+        </div>
+      </form>
+
+      <div class="contact-divider">
+        <span>or</span>
+      </div>
+
+      <div class="contact-actions">
+        <!-- STEPHANIE UPDATE MO TO: LinkedIn URL -->
+        <a href="#" class="cssbuttons-io" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.2em" height="1.2em">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span>Connect on LinkedIn</span>
+        </a>
+        <!-- STEPHANIE UPDATE MO TO: Copy link data (LinkedIn URL) -->
+        <button class="copy-link" data-copy="#" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>Copy link</span>
+        </button>
+      </div>
+
+      <div class="copy-notification" role="status" aria-live="polite">
+        <span>✓ Link copied to clipboard!</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div><strong>Stephanie<span>.</span></strong></div>
+    <p>Personal Portfolio • 2026</p>
+    <a href="../index.html">← Back to our team</a>
+  </footer>
+
+
+  <!-- ================= BACK TO TOP BUTTON ================= -->
+  <button class="back-to-top" aria-label="Back to top" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* ============ 0. LOADING SCREEN ============ */
+    (function () {
+      const loader = document.getElementById('loader');
+      if (!loader) return;
+
+      const startTime = Date.now();
+
+      window.addEventListener('load', function () {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, 1200 - elapsed);
+
+        setTimeout(function () {
+          loader.classList.add('loaded');
+          document.body.classList.add('loaded');
+
+          setTimeout(function () {
+            loader.style.display = 'none';
+          }, 800);
+        }, remaining);
+      });
+
+      setTimeout(function () {
+        if (!loader.classList.contains('loaded')) {
+          loader.classList.add('loaded');
+          document.body.classList.add('loaded');
+          setTimeout(function () {
+            loader.style.display = 'none';
+          }, 800);
+        }
+      }, 4000);
+    })();
+
+
+    /* ============ 1. CURSOR TRAIL (cosmic line) ============ */
+    (function () {
+      const canvas = document.getElementById('cursorTrail');
+      if (!canvas) return;
+
+      const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (!hasHover) {
+        canvas.style.display = 'none';
+        return;
+      }
+
+      const ctx = canvas.getContext('2d');
+      let width = 0;
+      let height = 0;
+      let dpr = window.devicePixelRatio || 1;
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.scale(dpr, dpr);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const trail = [];
+      const MAX_LENGTH = 30;
+      const FADE_SPEED = 0.03;
+
+      let mouseX = 0;
+      let mouseY = 0;
+      let lastMouseX = 0;
+      let lastMouseY = 0;
+
+      document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        const dx = mouseX - lastMouseX;
+        const dy = mouseY - lastMouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist > 2) {
+          trail.push({
+            x: mouseX,
+            y: mouseY,
+            life: 1,
+            size: Math.min(6, 2 + dist * 0.15)
+          });
+
+          if (trail.length > MAX_LENGTH) {
+            trail.shift();
+          }
+
+          lastMouseX = mouseX;
+          lastMouseY = mouseY;
+        }
+      });
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = trail.length - 1; i >= 0; i--) {
+          const point = trail[i];
+          point.life -= FADE_SPEED;
+
+          if (point.life <= 0) {
+            trail.splice(i, 1);
+            continue;
+          }
+
+          const alpha = point.life;
+          const size = point.size * point.life;
+
+          const gradient = ctx.createRadialGradient(
+            point.x, point.y, 0,
+            point.x, point.y, size * 3
+          );
+          gradient.addColorStop(0, `rgba(168, 213, 178, ${alpha * 0.9})`);
+          gradient.addColorStop(0.4, `rgba(109, 184, 138, ${alpha * 0.5})`);
+          gradient.addColorStop(1, 'rgba(74, 140, 107, 0)');
+
+          ctx.beginPath();
+          ctx.fillStyle = gradient;
+          ctx.arc(point.x, point.y, size * 3, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.8})`;
+          ctx.arc(point.x, point.y, size * 0.6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        if (trail.length > 1) {
+          ctx.beginPath();
+          ctx.moveTo(trail[0].x, trail[0].y);
+
+          for (let i = 1; i < trail.length; i++) {
+            const p = trail[i];
+            const prev = trail[i - 1];
+            const midX = (p.x + prev.x) / 2;
+            const midY = (p.y + prev.y) / 2;
+            ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+          }
+
+          const last = trail[trail.length - 1];
+          const first = trail[0];
+          const lineGradient = ctx.createLinearGradient(
+            first.x, first.y, last.x, last.y
+          );
+          lineGradient.addColorStop(0, 'rgba(168, 213, 178, 0)');
+          lineGradient.addColorStop(0.5, 'rgba(168, 213, 178, 0.3)');
+          lineGradient.addColorStop(1, 'rgba(168, 213, 178, 0)');
+
+          ctx.strokeStyle = lineGradient;
+          ctx.lineWidth = 1.5;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+    })();
+
+
+    /* ============ 2. NAVBAR AUTO-HIDE ============ */
+    (function () {
+      const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+
+      let lastScrollY = window.scrollY;
+      let isHoveringTop = false;
+      let ticking = false;
+      const SCROLL_THRESHOLD = 80;
+
+      document.addEventListener('mousemove', function (e) {
+        const isInTopZone = e.clientY < 100;
+        if (isInTopZone !== isHoveringTop) {
+          isHoveringTop = isInTopZone;
+          updateNavbar();
+        }
+      });
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateNavbar();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      function updateNavbar() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY < SCROLL_THRESHOLD) {
+          navbar.classList.remove('navbar-hidden');
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (isHoveringTop) {
+          navbar.classList.remove('navbar-hidden');
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (currentScrollY > lastScrollY) {
+          navbar.classList.add('navbar-hidden');
+        } else {
+          navbar.classList.remove('navbar-hidden');
+        }
+
+        lastScrollY = currentScrollY;
+      }
+    })();
+
+
+    /* ============ 3. SCROLL PROGRESS BAR ============ */
+    (function () {
+      const progressFill = document.querySelector('.scroll-progress-fill');
+      if (!progressFill) return;
+
+      let ticking = false;
+
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressFill.style.width = percent + '%';
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateProgress);
+          ticking = true;
+        }
+      });
+
+      updateProgress();
+    })();
+
+
+    /* ============ 4. ACTIVE SECTION HIGHLIGHT ============ */
+    (function () {
+      const navLinks = document.querySelectorAll('.navbar nav a[data-section]');
+      const sections = document.querySelectorAll('section[id]');
+      if (!navLinks.length || !sections.length) return;
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(function (link) {
+              link.classList.toggle('active', link.dataset.section === id);
+            });
+          }
+        });
+      }, {
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+
+
+    /* ============ 5. BACK TO TOP BUTTON ============ */
+    (function () {
+      const btn = document.querySelector('.back-to-top');
+      if (!btn) return;
+
+      let ticking = false;
+
+      function toggleBtn() {
+        if (window.scrollY > 500) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(toggleBtn);
+          ticking = true;
+        }
+      });
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      toggleBtn();
+    })();
+
+
+    /* ============ 6. COPY TO CLIPBOARD ============ */
+    (function () {
+      const copyBtn = document.querySelector('.copy-link');
+      const notification = document.querySelector('.copy-notification');
+      if (!copyBtn || !notification) return;
+
+      let hideTimer;
+
+      copyBtn.addEventListener('click', function () {
+        const text = copyBtn.dataset.copy;
+
+        if (!text || text === '#') return;
+
+        navigator.clipboard.writeText(text).then(function () {
+          copyBtn.classList.add('copied');
+          notification.classList.add('show');
+
+          clearTimeout(hideTimer);
+          hideTimer = setTimeout(function () {
+            copyBtn.classList.remove('copied');
+            notification.classList.remove('show');
+          }, 2200);
+        }).catch(function (err) {
+          console.error('Copy failed:', err);
+        });
+      });
+    })();
+
+
+    /* ============ 7. ANIMATED STATS COUNTER ============ */
+    (function () {
+      const statsGrid = document.getElementById('statsGrid');
+      if (!statsGrid) return;
+
+      const statNumbers = statsGrid.querySelectorAll('.stat-number');
+      let started = false;
+
+      function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function update(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+
+          el.textContent = current + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = target + suffix;
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            statNumbers.forEach(function (el, index) {
+              setTimeout(function () {
+                animateCounter(el);
+              }, index * 150);
+            });
+            observer.disconnect();
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+
+      observer.observe(statsGrid);
+    })();
+
+
+    /* ============ 8. CONTACT FORM VALIDATION ============ */
+    (function () {
+      const form = document.getElementById('contactForm');
+      const successBox = document.getElementById('formSuccess');
+      const submitBtn = document.getElementById('submitBtn');
+      if (!form) return;
+
+      // STEPHANIE UPDATE MO TO: Formspree endpoint
+      const FORMSPREE_ENDPOINT = '';
+
+      const validators = {
+        name: function (value) {
+          if (!value.trim()) return 'Please enter your name.';
+          if (value.trim().length < 2) return 'Name must be at least 2 characters.';
+          if (value.trim().length > 60) return 'Name is too long.';
+          if (!/^[a-zA-Z\s.'-]+$/.test(value.trim())) return 'Name contains invalid characters.';
+          return '';
+        },
+        email: function (value) {
+          if (!value.trim()) return 'Please enter your email.';
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+          if (!emailRegex.test(value.trim())) return 'Please enter a valid email address.';
+          return '';
+        },
+        subject: function (value) {
+          if (!value.trim()) return 'Please enter a subject.';
+          if (value.trim().length < 3) return 'Subject must be at least 3 characters.';
+          if (value.trim().length > 100) return 'Subject is too long.';
+          return '';
+        },
+        message: function (value) {
+          if (!value.trim()) return 'Please enter your message.';
+          if (value.trim().length < 10) return 'Message must be at least 10 characters.';
+          if (value.trim().length > 1000) return 'Message is too long (max 1000 characters).';
+          return '';
+        }
+      };
+
+      function getFieldWrapper(input) {
+        return input.closest('.form-group');
+      }
+
+      function getErrorSpan(fieldName) {
+        return form.querySelector('[data-error-for="' + fieldName + '"]');
+      }
+
+      function showError(fieldName, message) {
+        const input = form.querySelector('[name="' + fieldName + '"]');
+        const wrapper = getFieldWrapper(input);
+        const errorSpan = getErrorSpan(fieldName);
+        if (wrapper) wrapper.classList.add('has-error');
+        if (errorSpan) errorSpan.textContent = message;
+      }
+
+      function clearError(fieldName) {
+        const input = form.querySelector('[name="' + fieldName + '"]');
+        const wrapper = getFieldWrapper(input);
+        const errorSpan = getErrorSpan(fieldName);
+        if (wrapper) wrapper.classList.remove('has-error');
+        if (errorSpan) errorSpan.textContent = '';
+      }
+
+      function validateField(fieldName) {
+        const input = form.querySelector('[name="' + fieldName + '"]');
+        if (!input) return true;
+
+        const error = validators[fieldName](input.value);
+        if (error) {
+          showError(fieldName, error);
+          return false;
+        } else {
+          clearError(fieldName);
+          return true;
+        }
+      }
+
+      Object.keys(validators).forEach(function (fieldName) {
+        const input = form.querySelector('[name="' + fieldName + '"]');
+        if (!input) return;
+
+        input.addEventListener('blur', function () {
+          if (input.value.trim()) {
+            validateField(fieldName);
+          }
+        });
+
+        input.addEventListener('input', function () {
+          if (input.closest('.form-group').classList.contains('has-error')) {
+            validateField(fieldName);
+          }
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+        let firstInvalidField = null;
+
+        Object.keys(validators).forEach(function (fieldName) {
+          const fieldValid = validateField(fieldName);
+          if (!fieldValid && !firstInvalidField) {
+            firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
+          }
+          if (!fieldValid) isValid = false;
+        });
+
+        if (!isValid) {
+          if (firstInvalidField) firstInvalidField.focus();
+          return;
+        }
+
+        if (!FORMSPREE_ENDPOINT) {
+          submitBtn.disabled = true;
+          const originalText = submitBtn.querySelector('span').textContent;
+          submitBtn.querySelector('span').textContent = 'Sending...';
+
+          setTimeout(function () {
+            successBox.classList.add('show');
+            form.reset();
+            Object.keys(validators).forEach(clearError);
+
+            submitBtn.disabled = false;
+            submitBtn.querySelector('span').textContent = originalText;
+
+            setTimeout(function () {
+              successBox.classList.remove('show');
+            }, 5000);
+          }, 900);
+          return;
+        }
+
+        submitBtn.disabled = true;
+        const originalText = submitBtn.querySelector('span').textContent;
+        submitBtn.querySelector('span').textContent = 'Sending...';
+
+        fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            subject: form.subject.value.trim(),
+            message: form.message.value.trim()
+          })
+        })
+        .then(function (response) {
+          if (response.ok) {
+            successBox.classList.add('show');
+            form.reset();
+            Object.keys(validators).forEach(clearError);
+
+            setTimeout(function () {
+              successBox.classList.remove('show');
+            }, 5000);
+          } else {
+            return response.json().then(function (data) {
+              const errorMsg = (data.errors && data.errors[0] && data.errors[0].message)
+                ? data.errors[0].message
+                : 'Something went wrong. Please try again.';
+              alert('Error: ' + errorMsg);
+            });
+          }
+        })
+        .catch(function (error) {
+          alert('Network error: ' + error.message);
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.querySelector('span').textContent = originalText;
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
