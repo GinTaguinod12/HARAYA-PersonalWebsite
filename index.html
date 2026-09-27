@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Meet the Haraya Team — a group of students showcasing their personal portfolios.">
-  <title>HARAYA Team · Our Personal Websites</title>
+  <title>Haraya Team · Our Personal Websites</title>
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,28 +12,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- ================= LOADING SCREEN ================= -->
+<body>
+
+  <!-- ================= LOADING SCREEN (BLUE → GREEN CROSSFADE) ================= -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-content">
-      <div class="loader-planet">
-        <div class="loader-ring"></div>
-        <div class="loader-ring"></div>
-        <div class="loader-dot"></div>
-      </div>
-      <p class="loader-text">Loading the cosmos...</p>
-      <div class="loader-progress">
-        <div class="loader-progress-fill"></div>
+
+
+    <!-- Green Layer (target theme — team page) -->
+    <div class="loader-layer loader-layer-green">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Welcome to Haraya Team</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
       </div>
     </div>
+
   </div>
 
   <!-- ================= CURSOR TRAIL CANVAS ================= -->
   <canvas class="cursor-trail" id="cursorTrail" aria-hidden="true"></canvas>
+
+
 
   <!-- ================= SCROLL PROGRESS BAR ================= -->
   <div class="scroll-progress" aria-hidden="true">
@@ -163,15 +173,25 @@
 
     <div class="about-content">
       <p>
-        We are a team of students with different interests,
-        skills, and experiences. This website serves as a
-        central portfolio where you can explore each member's
-        personal website.
+        We are a team of five students from National University Manila
+        brought together by our shared passion for technology, creativity, and innovation.
+        Each member brings a different perspective, skill set, and area of interest from
+        developing mobile applications and websites to designing
+        creative digital systems and exploring new technological ideas.
+        </p>
+
+        <p>
+        Rather than having the same strengths, we believe that our differences
+        make our team stronger. We combine our individual
+        talents, experiences, and creativity to turn ideas into meaningful digital projects.
       </p>
       <p>
-        Each member has their own personal page with the same
-        overall design while showcasing their unique
-        personality, skills, hobbies, and projects.
+        This website serves as our central creative space, where you can discover
+        the work and personality behind each member. Every member
+        has their own personal page, following a consistent overall design
+        while showcasing their unique skills, hobbies, interests, personality, and projects.
+        Together, we are not just building websites and applications 
+        we are learning, creating, and turning ideas into digital experiences.
       </p>
     </div>
   </section>
@@ -289,7 +309,7 @@
           <div class="member-info">
             <span class="member-number">05</span>
             <h3>Ginziel S. Taguinod</h3>
-            <p>Student • Mobile App Developer</p>
+            <p>Student • Backend / Mobile App Developer</p>
             <span class="view-profile">
               View Profile <span aria-hidden="true">→</span>
             </span>
