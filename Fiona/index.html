@@ -4,33 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Fiona Mai R. Recaña — Student & future professional. Personal portfolio.">
+  <title>Fiona · Cosmic Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <title>Fiona · Cosmic Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ================= LOADING SCREEN ================= -->
+  <!-- ================= LOADING SCREEN (GREEN → LIGHT RED CROSSFADE) ================= -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-content">
-      <div class="loader-planet">
-        <div class="loader-ring"></div>
-        <div class="loader-ring"></div>
-        <div class="loader-dot"></div>
-      </div>
-      <p class="loader-text">Loading the cosmos...</p>
-      <div class="loader-progress">
-        <div class="loader-progress-fill"></div>
+
+    <!-- Green Layer (starting theme — same as team page) -->
+    <div class="loader-layer loader-layer-green">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Loading the cosmos...</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
       </div>
     </div>
+
+    <!-- Light Red Layer (target theme — same as personal page) -->
+    <div class="loader-layer loader-layer-red">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Welcome to my portfolio</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ================= CURSOR TRAIL CANVAS ================= -->
   <canvas class="cursor-trail" id="cursorTrail" aria-hidden="true"></canvas>
-  <!--<span class="cursor-dot" aria-hidden="true"></span>
-  <span class="cursor-ring" aria-hidden="true"></span> -->
 
   <!-- ================= SCROLL PROGRESS BAR ================= -->
   <div class="scroll-progress" aria-hidden="true">
@@ -110,10 +129,11 @@
     <div class="hero-content">
       <p class="eyebrow reveal reveal-delay-1">personal portfolio</p>
       <h1 class="reveal reveal-delay-2">Hi, I'm <span class="gradient-text">Fiona.</span></h1>
-      <h2 class="reveal reveal-delay-3">Student &amp; Future professional</h2>
+      <h2 class="reveal reveal-delay-3">Student &amp; future professional</h2>
       <p class="intro reveal reveal-delay-4">
-        Welcome to my personal space - get to know my background, skills, and projects. 
-
+        Welcome to my personal space! Get to know my background,
+        explore my skills, interests, and the projects I've been
+        building along the way.
       </p>
       <div class="hero-buttons reveal reveal-delay-5">
         <a href="#about" class="cssbuttons-io">
@@ -166,10 +186,9 @@
         <p>
           Hello! I'm Fiona Mai Recaña, a 3rd-year student at National University taking
           BS Information Technology. Enjoys learning and discovering new things. Passionate
-          about joining student organizations and being part of the community. Aims to 
-          become a professional in the field of Information Technology. A goal-oriented, 
+          about joining student organizations and being part of the community. Aims to
+          become a professional in the field of Information Technology. A goal-oriented,
           versatile, and empathetic individual who values teamwork, creativity, and community involvement.
-
         </p>
         <p>
           This personal portfolio showcases my background, skills,
@@ -179,22 +198,18 @@
 
         <div class="stats-grid" id="statsGrid">
           <div class="stat-card">
-            <!-- FIONA UPDATE MO TO: Years Coding -->
             <div class="stat-number" data-target="2" data-suffix="+">0</div>
             <div class="stat-label">Years Coding</div>
           </div>
           <div class="stat-card">
-            <!-- FIONA UPDATE MO TO: Projects Built -->
             <div class="stat-number" data-target="10" data-suffix="+">0</div>
             <div class="stat-label">Projects Built</div>
           </div>
           <div class="stat-card">
-            <!-- FIONA UPDATE MO TO: Tech Learned -->
             <div class="stat-number" data-target="5" data-suffix="">0</div>
             <div class="stat-label">Tech Learned</div>
           </div>
           <div class="stat-card">
-            <!-- FIONA UPDATE MO TO: Dedication percentage -->
             <div class="stat-number" data-target="100" data-suffix="%">0</div>
             <div class="stat-label">Dedication</div>
           </div>
@@ -211,12 +226,10 @@
         </div>
         <div class="info-item">
           <span>Field</span>
-          <!-- FIONA UPDATE MO TO: Field/Course (hal. Information Technology) -->
           <strong>Information Technology</strong>
         </div>
         <div class="info-item">
           <span>Location</span>
-          <!-- FIONA UPDATE MO TO: Location (hal. Quezon City, Philippines) -->
           <strong>Quezon City, Philippines</strong>
         </div>
       </div>
@@ -233,17 +246,11 @@
 
     <div class="timeline">
 
-      <!-- PRESENT — FIONA UPDATE MO TO -->
-      <a
-        href="https://www.google.com/maps/place/National+University-Manila/@14.6043164,120.918411,13z/data=!4m10!1m2!2m1!1sNational+University+Manila!3m6!1s0x3397c9fc11a6ceb3:0x9d4220dade0140ab!8m2!3d14.6043164!4d120.9946287!15sChpOYXRpb25hbCBVbml2ZXJzaXR5IE1hbmlsYVocIhpuYXRpb25hbCB1bml2ZXJzaXR5IG1hbmlsYZIBEnByaXZhdGVfdW5pdmVyc2l0eZoBI0NoWkRTVUhOTUc5blMwVkpRMEZuU1VSU2IzVjFNRTVSRUFF4AEA-gEECAAQTA!16zL20vMDc4bjhi?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
-        class="timeline-item"
-      >
+      <a href="#" class="timeline-item">
         <div class="timeline-number">01</div>
         <div class="timeline-content">
           <span class="timeline-badge">Present</span>
-          <!-- FIONA UPDATE MO TO: Current school name -->
           <h3>National University - Manila</h3>
-          <!-- FIONA UPDATE MO TO: Program / Course description -->
           <p>BS Information Technology with specialization in Mobile and Web Applications.</p>
           <span class="timeline-location">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -254,17 +261,11 @@
         </div>
       </a>
 
-      <!-- PREVIOUS — FIONA UPDATE MO TO -->
-      <a
-        href="https://maps.app.goo.gl/HwXLK9dfRwJFt8Zs7"
-        class="timeline-item"
-      >
+      <a href="#" class="timeline-item">
         <div class="timeline-number">02</div>
         <div class="timeline-content">
           <span class="timeline-badge">Previous</span>
-          <!-- FIONA UPDATE MO TO: Previous school name -->
           <h3>Manuel L. Quezon University</h3>
-          <!-- FIONA UPDATE MO TO: Previous education description -->
           <p>Senior High School - STEM Strand</p>
           <span class="timeline-location">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -275,16 +276,11 @@
         </div>
       </a>
 
-      <a
-        href="https://maps.app.goo.gl/GCAL969m5Fn964Gv6"
-        class="timeline-item"
-      >
+      <a href="#" class="timeline-item">
         <div class="timeline-number">03</div>
         <div class="timeline-content">
           <span class="timeline-badge">Previous</span>
-          <!-- FIONA UPDATE MO TO: Current school name -->
           <h3>Ramon Magsaysay (Cubao) High School</h3>
-          <!-- FIONA UPDATE MO TO: Program / Course description -->
           <p>Junior High School - STE Program</p>
           <span class="timeline-location">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -295,16 +291,11 @@
         </div>
       </a>
 
-      <a
-        href="https://maps.app.goo.gl/EwyanUpMTvJWFJKW7"
-        class="timeline-item"
-      >
+      <a href="#" class="timeline-item">
         <div class="timeline-number">04</div>
         <div class="timeline-content">
           <span class="timeline-badge">Previous</span>
-          <!-- FIONA UPDATE MO TO: Current school name -->
           <h3>Philippine Medical Women's School</h3>
-          <!-- FIONA UPDATE MO TO: Program / Course description -->
           <p>Pre-School to Elementary</p>
           <span class="timeline-location">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -319,62 +310,53 @@
   </section>
 
 
-  <!-- ================= SKILLS ================= -->
+  <!-- ================= POSITIONS HELD ================= -->
   <section id="involvement" class="involvement">
     <div class="section-heading">
-      <p class="eyebrow">03 — leadership & organizational involvement</p>
+      <p class="eyebrow">03 — leadership &amp; organizational involvement</p>
       <h2>Positions Held</h2>
     </div>
-    <div class="involvement-grid">
+    <div class="skills-grid">
 
-      <!-- FIONA UPDATE MO TO: Skill 1 + percentage -->
-      <div class="skill-card" style="--level: 80%;">
+      <div class="skill-card">
         <span>2026-Present</span>
         <h3>3rd Year Batch Representative, CCIT Student Council</h3>
-        <p>Batch representative of the third-year BSIT and BSCS  students of NU Manila</p>
-
+        <p>Batch representative of the third-year BSIT and BSCS students of NU Manila.</p>
       </div>
 
-      <!-- FIONA UPDATE MO TO: Skill 2 + percentage -->
-      <div class="skill-card" style="--level: 75%;">
+      <div class="skill-card">
         <span>2026-Present</span>
         <h3>Chief of Video Editor, Bulldogs Sports Zone</h3>
-        <p>Edits interview clips and other entertainment content featuring NU’s student - athletes. </p>
-
+        <p>Edits interview clips and other entertainment content featuring NU's student-athletes.</p>
       </div>
 
-      <!-- FIONA UPDATE MO TO: Skill 3 + percentage -->
-      <div class="skill-card" style="--level: 85%;">
+      <div class="skill-card">
         <span>May 2026</span>
         <h3>Sound Director, Tanghalang Nasyunal - Tanghal S2</h3>
         <p>Directed sounds in a story entitled Patahian ng mga Malaya as part of the theater production.</p>
-
       </div>
 
-      <!-- FIONA UPDATE MO TO: Skill 4 + percentage -->
-      <div class="skill-card" style="--level: 88%;">
+      <div class="skill-card">
         <span>May 2026</span>
         <h3>Photographer/Videographer, Tanghalang Nasyunal - Tanghal S2</h3>
-        <p>Captured photos and videos as part of the theater production</p>
-
+        <p>Captured photos and videos as part of the theater production.</p>
       </div>
 
-      <div class="skill-card" style="--level: 88%;">
+      <div class="skill-card">
         <span>2025-2026</span>
         <h3>Committee of Video Editor, Bulldogs Sports Zone</h3>
-        <p>Edits interview clips and other entertainment content featuring NU’s student-athletes.</p>
-
+        <p>Edits interview clips and other entertainment content featuring NU's student-athletes.</p>
       </div>
-      
-      <div class="skill-card" style="--level: 88%;">
+
+      <div class="skill-card">
         <span>2024-2026</span>
         <h3>Committee of Events Creation and Technical Production, CCIT Student Council</h3>
         <p>Designs event venues and serves as part of the working committee during organizational events.</p>
-
       </div>
 
     </div>
   </section>
+
 
   <!-- ================= SKILLS ================= -->
   <section id="skills" class="skills">
@@ -418,6 +400,9 @@
 
     </div>
   </section>
+
+
+
 
 
   <!-- ================= PROJECTS ================= -->
@@ -533,6 +518,7 @@
   </section>
 
 
+
   <!-- ================= CONTACT ================= -->
   <section id="contact" class="contact">
     <div class="contact-content">
@@ -588,14 +574,12 @@
       </div>
 
       <div class="contact-actions">
-        <!-- FIONA UPDATE MO TO: LinkedIn URL -->
         <a href="https://www.linkedin.com/in/siomwai" class="cssbuttons-io" target="_blank" rel="noopener noreferrer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.2em" height="1.2em">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>
           <span>Connect on LinkedIn</span>
         </a>
-        <!-- FIONA UPDATE MO TO: Copy link data (LinkedIn URL) -->
         <button class="copy-link" data-copy="https://www.linkedin.com/in/siomwai" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -630,71 +614,6 @@
 
   <!-- ================= SCRIPTS ================= -->
   <script>
-    /* ============ 0. CUSTOM CURSOR ============ */
-    (function () {
-      const dot = document.querySelector('.cursor-dot');
-      const ring = document.querySelector('.cursor-ring');
-      if (!dot || !ring) return;
-
-      const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-      if (!hasHover) {
-        dot.style.display = 'none';
-        ring.style.display = 'none';
-        return;
-      }
-
-      let mouseX = 0;
-      let mouseY = 0;
-      let ringX = 0;
-      let ringY = 0;
-
-      document.addEventListener('mousemove', function (event) {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-      });
-
-      function animateRing() {
-        ringX += (mouseX - ringX) * 0.15;
-        ringY += (mouseY - ringY) * 0.15;
-        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-        requestAnimationFrame(animateRing);
-      }
-      animateRing();
-
-      document.querySelectorAll('a, button, section, footer, .info-card, .timeline-item, .skill-card, .hobby, .project-card, .stat-card, input, textarea, .copy-link').forEach(function (element) {
-        element.addEventListener('mouseenter', function () {
-          dot.classList.add('cursor-hover');
-          ring.classList.add('cursor-hover');
-        });
-
-        element.addEventListener('mouseleave', function () {
-          dot.classList.remove('cursor-hover');
-          ring.classList.remove('cursor-hover');
-        });
-      });
-
-      document.addEventListener('mouseleave', function () {
-        dot.style.opacity = '0';
-        ring.style.opacity = '0';
-      });
-
-      document.addEventListener('mouseenter', function () {
-        dot.style.opacity = '1';
-        ring.style.opacity = '1';
-      });
-
-      document.addEventListener('mousedown', function () {
-        ring.classList.add('cursor-click');
-        dot.classList.add('cursor-click');
-      });
-
-      document.addEventListener('mouseup', function () {
-        ring.classList.remove('cursor-click');
-        dot.classList.remove('cursor-click');
-      });
-    })();
-
     /* ============ 0. LOADING SCREEN ============ */
     (function () {
       const loader = document.getElementById('loader');
@@ -704,7 +623,7 @@
 
       window.addEventListener('load', function () {
         const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, 1200 - elapsed);
+        const remaining = Math.max(0, 2800 - elapsed);
 
         setTimeout(function () {
           loader.classList.add('loaded');
@@ -712,7 +631,7 @@
 
           setTimeout(function () {
             loader.style.display = 'none';
-          }, 800);
+          }, 900);
         }, remaining);
       });
 
@@ -722,13 +641,13 @@
           document.body.classList.add('loaded');
           setTimeout(function () {
             loader.style.display = 'none';
-          }, 800);
+          }, 900);
         }
-      }, 4000);
+      }, 5000);
     })();
 
 
-    /* ============ 1. CURSOR TRAIL (cosmic line) ============ */
+    /* ============ 1. CURSOR TRAIL (LIGHT RED COSMIC LINE) ============ */
     (function () {
       const canvas = document.getElementById('cursorTrail');
       if (!canvas) return;
@@ -805,13 +724,14 @@
           const alpha = point.life;
           const size = point.size * point.life;
 
+          /* 🌹 LIGHT RED trail colors */
           const gradient = ctx.createRadialGradient(
             point.x, point.y, 0,
             point.x, point.y, size * 3
           );
-          gradient.addColorStop(0, `rgba(255, 77, 90, ${alpha * 0.9})`);
-          gradient.addColorStop(0.4, `rgba(220, 30, 45, ${alpha * 0.5})`);
-          gradient.addColorStop(1, 'rgba(170, 15, 30, 0)');
+          gradient.addColorStop(0, `rgba(255, 154, 165, ${alpha * 0.9})`);
+          gradient.addColorStop(0.4, `rgba(212, 90, 106, ${alpha * 0.5})`);
+          gradient.addColorStop(1, 'rgba(143, 37, 53, 0)');
 
           ctx.beginPath();
           ctx.fillStyle = gradient;
@@ -841,9 +761,9 @@
           const lineGradient = ctx.createLinearGradient(
             first.x, first.y, last.x, last.y
           );
-          lineGradient.addColorStop(0, 'rgba(255, 77, 90, 0)');
-          lineGradient.addColorStop(0.5, 'rgba(255, 77, 90, 0.3)');
-          lineGradient.addColorStop(1, 'rgba(255, 77, 90, 0)');
+          lineGradient.addColorStop(0, 'rgba(255, 154, 165, 0)');
+          lineGradient.addColorStop(0.5, 'rgba(255, 154, 165, 0.3)');
+          lineGradient.addColorStop(1, 'rgba(255, 154, 165, 0)');
 
           ctx.strokeStyle = lineGradient;
           ctx.lineWidth = 1.5;
@@ -1084,7 +1004,6 @@
       const submitBtn = document.getElementById('submitBtn');
       if (!form) return;
 
-      // FIONA UPDATE MO TO: Formspree endpoint (gumawa ng account sa formspree.io)
       const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mljdpydj';
 
       const validators = {
@@ -1115,13 +1034,8 @@
         }
       };
 
-      function getFieldWrapper(input) {
-        return input.closest('.form-group');
-      }
-
-      function getErrorSpan(fieldName) {
-        return form.querySelector('[data-error-for="' + fieldName + '"]');
-      }
+      function getFieldWrapper(input) { return input.closest('.form-group'); }
+      function getErrorSpan(fieldName) { return form.querySelector('[data-error-for="' + fieldName + '"]'); }
 
       function showError(fieldName, message) {
         const input = form.querySelector('[name="' + fieldName + '"]');
@@ -1142,45 +1056,30 @@
       function validateField(fieldName) {
         const input = form.querySelector('[name="' + fieldName + '"]');
         if (!input) return true;
-
         const error = validators[fieldName](input.value);
-        if (error) {
-          showError(fieldName, error);
-          return false;
-        } else {
-          clearError(fieldName);
-          return true;
-        }
+        if (error) { showError(fieldName, error); return false; }
+        else { clearError(fieldName); return true; }
       }
 
       Object.keys(validators).forEach(function (fieldName) {
         const input = form.querySelector('[name="' + fieldName + '"]');
         if (!input) return;
-
         input.addEventListener('blur', function () {
-          if (input.value.trim()) {
-            validateField(fieldName);
-          }
+          if (input.value.trim()) validateField(fieldName);
         });
-
         input.addEventListener('input', function () {
-          if (input.closest('.form-group').classList.contains('has-error')) {
-            validateField(fieldName);
-          }
+          if (input.closest('.form-group').classList.contains('has-error')) validateField(fieldName);
         });
       });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-
         let isValid = true;
         let firstInvalidField = null;
 
         Object.keys(validators).forEach(function (fieldName) {
           const fieldValid = validateField(fieldName);
-          if (!fieldValid && !firstInvalidField) {
-            firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
-          }
+          if (!fieldValid && !firstInvalidField) firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
           if (!fieldValid) isValid = false;
         });
 
@@ -1189,48 +1088,21 @@
           return;
         }
 
-        submitBtn.disabled = true;
-        const originalText = submitBtn.querySelector('span').textContent;
-        submitBtn.querySelector('span').textContent = 'Sending...';
+        if (!FORMSPREE_ENDPOINT) {
+          submitBtn.disabled = true;
+          const originalText = submitBtn.querySelector('span').textContent;
+          submitBtn.querySelector('span').textContent = 'Sending...';
 
-        fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            subject: form.subject.value.trim(),
-            message: form.message.value.trim()
-          })
-        })
-        .then(function (response) {
-          if (response.ok) {
+          setTimeout(function () {
             successBox.classList.add('show');
             form.reset();
             Object.keys(validators).forEach(clearError);
-
-            setTimeout(function () {
-              successBox.classList.remove('show');
-            }, 5000);
-          } else {
-            return response.json().then(function (data) {
-              const errorMsg = (data.errors && data.errors[0] && data.errors[0].message)
-                ? data.errors[0].message
-                : 'Something went wrong. Please try again.';
-              alert('Error: ' + errorMsg);
-            });
-          }
-        })
-        .catch(function (error) {
-          alert('Network error: ' + error.message);
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.querySelector('span').textContent = originalText;
-        });
+            submitBtn.disabled = false;
+            submitBtn.querySelector('span').textContent = originalText;
+            setTimeout(function () { successBox.classList.remove('show'); }, 5000);
+          }, 900);
+          return;
+        }
       });
     })();
   </script>
