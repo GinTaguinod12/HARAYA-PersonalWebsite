@@ -1,4 +1,4 @@
-﻿/* ================= RESET & GLOBAL ================= */
+﻿﻿/* ================= RESET & GLOBAL ================= */
 * {
   margin: 0;
   padding: 0;
@@ -2149,19 +2149,16 @@ footer a:hover {
 }
 
 /* =========================================
-   LOADING SCREEN
+   LOADING SCREEN — SMOOTH GREEN → RED CROSSFADE
 ========================================= */
 
 .loader {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background:
-    radial-gradient(circle at 50% 50%, #35151d 0%, #16090d 70%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .loader.loaded {
@@ -2169,6 +2166,48 @@ footer a:hover {
   visibility: hidden;
 }
 
+/* === Two overlapping layers === */
+.loader-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === GREEN LAYER (starting) — smooth fade out === */
+.loader-layer-green {
+  background:
+    radial-gradient(circle at 50% 50%, #1a2b22 0%, #0a1510 70%);
+  animation: greenLayerFade 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  z-index: 2;
+}
+
+@keyframes greenLayerFade {
+  0%   { opacity: 1; }
+  40%  { opacity: 1; }
+  85%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* === LIGHT RED LAYER (target) — smooth fade in === */
+.loader-layer-red {
+  background:
+    radial-gradient(circle at 50% 50%, #35151d 0%, #16090d 70%);
+  opacity: 0;
+  animation: redLayerFade 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@keyframes redLayerFade {
+  0%   { opacity: 0; }
+  15%  { opacity: 0; }
+  60%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* === CONTENT === */
 .loader-content {
   display: flex;
   flex-direction: column;
@@ -2176,12 +2215,26 @@ footer a:hover {
   gap: 2rem;
 }
 
-/* Planet loader */
+/* === PLANET === */
 .loader-planet {
   position: relative;
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  animation: planetPulse 2s ease-in-out infinite;
+}
+
+.loader-layer-green .loader-planet {
+  background:
+    radial-gradient(circle at 30% 30%, #a8d5b2 0%, #4a8c6b 40%, #1a3a2a 100%);
+  box-shadow:
+    0 0 40px rgba(168, 213, 178, 0.5),
+    0 0 80px rgba(168, 213, 178, 0.3),
+    inset -15px -15px 30px rgba(0, 0, 0, 0.5),
+    inset 10px 10px 20px rgba(168, 213, 178, 0.4);
+}
+
+.loader-layer-red .loader-planet {
   background:
     radial-gradient(circle at 30% 30%, #ff9aa5 0%, #8f2535 40%, #431522 100%);
   box-shadow:
@@ -2189,36 +2242,28 @@ footer a:hover {
     0 0 80px rgba(255, 154, 165, 0.3),
     inset -15px -15px 30px rgba(0, 0, 0, 0.5),
     inset 10px 10px 20px rgba(255, 154, 165, 0.4);
-  animation: planetPulse 2s ease-in-out infinite;
 }
 
 @keyframes planetPulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow:
-      0 0 40px rgba(255, 154, 165, 0.5),
-      0 0 80px rgba(255, 154, 165, 0.3),
-      inset -15px -15px 30px rgba(0, 0, 0, 0.5),
-      inset 10px 10px 20px rgba(255, 154, 165, 0.4);
-  }
-  50% {
-    transform: scale(1.08);
-    box-shadow:
-      0 0 60px rgba(255, 154, 165, 0.7),
-      0 0 120px rgba(255, 154, 165, 0.4),
-      inset -15px -15px 30px rgba(0, 0, 0, 0.5),
-      inset 10px 10px 20px rgba(255, 154, 165, 0.5);
-  }
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.08); }
 }
 
-/* Orbiting rings */
+/* === RINGS === */
 .loader-ring {
   position: absolute;
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  border: 2px dashed rgba(255, 154, 165, 0.5);
   pointer-events: none;
+}
+
+.loader-layer-green .loader-ring {
+  border: 2px dashed rgba(168, 213, 178, 0.5);
+}
+
+.loader-layer-red .loader-ring {
+  border: 2px dashed rgba(255, 154, 165, 0.5);
 }
 
 .loader-ring:nth-child(1) {
@@ -2232,8 +2277,16 @@ footer a:hover {
   width: 200px;
   height: 200px;
   margin: -100px 0 0 -100px;
-  border-color: rgba(255, 154, 165, 0.25);
+  border-style: dashed;
   animation: loaderSpinReverse 5s linear infinite;
+}
+
+.loader-layer-green .loader-ring:nth-child(2) {
+  border-color: rgba(168, 213, 178, 0.25);
+}
+
+.loader-layer-red .loader-ring:nth-child(2) {
+  border-color: rgba(255, 154, 165, 0.25);
 }
 
 @keyframes loaderSpin {
@@ -2246,7 +2299,7 @@ footer a:hover {
   to   { transform: rotate(0deg); }
 }
 
-/* Orbiting dot */
+/* === DOT === */
 .loader-dot {
   position: absolute;
   top: 50%;
@@ -2256,10 +2309,19 @@ footer a:hover {
   margin: -5px 0 0 -5px;
   border-radius: 50%;
   background: #ffffff;
+  animation: loaderDotOrbit 3s linear infinite;
+}
+
+.loader-layer-green .loader-dot {
+  box-shadow:
+    0 0 10px 3px rgba(255, 255, 255, 0.9),
+    0 0 20px 6px rgba(168, 213, 178, 0.6);
+}
+
+.loader-layer-red .loader-dot {
   box-shadow:
     0 0 10px 3px rgba(255, 255, 255, 0.9),
     0 0 20px 6px rgba(255, 154, 165, 0.6);
-  animation: loaderDotOrbit 3s linear infinite;
 }
 
 @keyframes loaderDotOrbit {
@@ -2267,35 +2329,49 @@ footer a:hover {
   to   { transform: rotate(360deg) translateX(75px) rotate(-360deg); }
 }
 
+/* === TEXT === */
 .loader-text {
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.15em;
-  color: #ff9aa5;
   text-transform: uppercase;
   animation: loaderTextPulse 1.5s ease-in-out infinite;
 }
+
+.loader-layer-green .loader-text { color: #a8d5b2; }
+.loader-layer-red .loader-text { color: #ff9aa5; }
 
 @keyframes loaderTextPulse {
   0%, 100% { opacity: 0.6; }
   50%      { opacity: 1; }
 }
 
+/* === PROGRESS BAR === */
 .loader-progress {
   width: 200px;
   height: 3px;
-  background: rgba(255, 154, 165, 0.15);
   border-radius: 3px;
   overflow: hidden;
 }
 
+.loader-layer-green .loader-progress { background: rgba(168, 213, 178, 0.15); }
+.loader-layer-red .loader-progress { background: rgba(255, 154, 165, 0.15); }
+
 .loader-progress-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #661a29, #ff9aa5);
   border-radius: 3px;
+  animation: loaderProgressFill 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.loader-layer-green .loader-progress-fill {
+  background: linear-gradient(90deg, #2d6b52, #a8d5b2);
+  box-shadow: 0 0 10px rgba(168, 213, 178, 0.6);
+}
+
+.loader-layer-red .loader-progress-fill {
+  background: linear-gradient(90deg, #661a29, #ff9aa5);
   box-shadow: 0 0 10px rgba(255, 154, 165, 0.6);
-  animation: loaderProgressFill 1.4s ease-out forwards;
 }
 
 @keyframes loaderProgressFill {
@@ -2303,7 +2379,6 @@ footer a:hover {
   100% { width: 100%; }
 }
 
-/* Prevent scroll while loading */
 body:not(.loaded) {
   overflow: hidden;
 }
