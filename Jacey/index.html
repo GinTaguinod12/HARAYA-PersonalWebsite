@@ -13,8 +13,11 @@
 </head>
 <body>
 
-  <!-- ================= LOADING SCREEN ================= -->
-  <div class="loader" id="loader" aria-hidden="true">
+<!-- ================= LOADING SCREEN (GREEN → ORANGE CROSSFADE) ================= -->
+<div class="loader" id="loader" aria-hidden="true">
+
+  <!-- Green Layer (starting theme — from team page) -->
+  <div class="loader-layer loader-layer-green">
     <div class="loader-content">
       <div class="loader-planet">
         <div class="loader-ring"></div>
@@ -27,6 +30,23 @@
       </div>
     </div>
   </div>
+
+  <!-- Orange Layer (target theme — Jacey's page) -->
+  <div class="loader-layer loader-layer-orange">
+    <div class="loader-content">
+      <div class="loader-planet">
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <p class="loader-text">Welcome to my portfolio</p>
+      <div class="loader-progress">
+        <div class="loader-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 
   <!-- ================= CURSOR TRAIL CANVAS ================= -->
@@ -224,11 +244,7 @@
 
     <div class="timeline">
 
-      <!-- PRESENT — PLACEHOLDER -->
-      <a
-        href="#"
-        class="timeline-item"
-      >
+      <a href="#" class="timeline-item">
         <div class="timeline-number">01</div>
         <div class="timeline-content">
           <span class="timeline-badge">Present</span>
@@ -243,11 +259,7 @@
         </div>
       </a>
 
-      <!-- PREVIOUS — PLACEHOLDER -->
-      <a
-        href="#"
-        class="timeline-item"
-      >
+      <a href="#" class="timeline-item">
         <div class="timeline-number">02</div>
         <div class="timeline-content">
           <span class="timeline-badge">Previous</span>
@@ -482,7 +494,7 @@
 
       window.addEventListener('load', function () {
         const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, 1200 - elapsed);
+        const remaining = Math.max(0, 2800 - elapsed);
 
         setTimeout(function () {
           loader.classList.add('loaded');
@@ -490,7 +502,7 @@
 
           setTimeout(function () {
             loader.style.display = 'none';
-          }, 800);
+          }, 900);
         }, remaining);
       });
 
@@ -500,79 +512,13 @@
           document.body.classList.add('loaded');
           setTimeout(function () {
             loader.style.display = 'none';
-          }, 800);
+          }, 900);
         }
-      }, 4000);
+      }, 5000);
     })();
 
 
-    /* ============ 1. CUSTOM CURSOR ============ */
-    (function () {
-      const dot = document.querySelector('.cursor-dot');
-      const ring = document.querySelector('.cursor-ring');
-      if (!dot || !ring) return;
-
-      const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-      if (!hasHover) {
-        dot.style.display = 'none';
-        ring.style.display = 'none';
-        return;
-      }
-
-      let mouseX = 0;
-      let mouseY = 0;
-      let ringX = 0;
-      let ringY = 0;
-
-      document.addEventListener('mousemove', function (e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-      });
-
-      function animateRing() {
-        const speed = 0.15;
-        ringX += (mouseX - ringX) * speed;
-        ringY += (mouseY - ringY) * speed;
-        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-        requestAnimationFrame(animateRing);
-      }
-      animateRing();
-
-      const hoverElements = document.querySelectorAll('a, button, .skill-card, .hobby, .project-card, .stat-card, input, textarea, .copy-link');
-
-      hoverElements.forEach(function (el) {
-        el.addEventListener('mouseenter', function () {
-          ring.classList.add('cursor-hover');
-          dot.classList.add('cursor-hover');
-        });
-        el.addEventListener('mouseleave', function () {
-          ring.classList.remove('cursor-hover');
-          dot.classList.remove('cursor-hover');
-        });
-      });
-
-      document.addEventListener('mouseleave', function () {
-        dot.style.opacity = '0';
-        ring.style.opacity = '0';
-      });
-      document.addEventListener('mouseenter', function () {
-        dot.style.opacity = '1';
-        ring.style.opacity = '1';
-      });
-
-      document.addEventListener('mousedown', function () {
-        ring.classList.add('cursor-click');
-        dot.classList.add('cursor-click');
-      });
-      document.addEventListener('mouseup', function () {
-        ring.classList.remove('cursor-click');
-        dot.classList.remove('cursor-click');
-      });
-    })();
-
-
-    /* ============ 1.5 CURSOR TRAIL (cosmic line) ============ */
+    /* ============ 1. CURSOR TRAIL (ORANGE COSMIC LINE) ============ */
     (function () {
       const canvas = document.getElementById('cursorTrail');
       if (!canvas) return;
@@ -649,13 +595,14 @@
           const alpha = point.life;
           const size = point.size * point.life;
 
+          /* 🟠 ORANGE trail colors */
           const gradient = ctx.createRadialGradient(
             point.x, point.y, 0,
             point.x, point.y, size * 3
           );
-          gradient.addColorStop(0, `rgba(168, 213, 178, ${alpha * 0.9})`);
-          gradient.addColorStop(0.4, `rgba(109, 184, 138, ${alpha * 0.5})`);
-          gradient.addColorStop(1, 'rgba(74, 140, 107, 0)');
+          gradient.addColorStop(0, `rgba(255, 176, 124, ${alpha * 0.9})`);
+          gradient.addColorStop(0.4, `rgba(232, 155, 106, ${alpha * 0.5})`);
+          gradient.addColorStop(1, 'rgba(217, 119, 66, 0)');
 
           ctx.beginPath();
           ctx.fillStyle = gradient;
@@ -685,9 +632,9 @@
           const lineGradient = ctx.createLinearGradient(
             first.x, first.y, last.x, last.y
           );
-          lineGradient.addColorStop(0, 'rgba(168, 213, 178, 0)');
-          lineGradient.addColorStop(0.5, 'rgba(168, 213, 178, 0.3)');
-          lineGradient.addColorStop(1, 'rgba(168, 213, 178, 0)');
+          lineGradient.addColorStop(0, 'rgba(255, 176, 124, 0)');
+          lineGradient.addColorStop(0.5, 'rgba(255, 176, 124, 0.3)');
+          lineGradient.addColorStop(1, 'rgba(255, 176, 124, 0)');
 
           ctx.strokeStyle = lineGradient;
           ctx.lineWidth = 1.5;
@@ -928,8 +875,7 @@
       const submitBtn = document.getElementById('submitBtn');
       if (!form) return;
 
-      // NOTE: Placeholder pa lang ito — si Jacey ang gagawa ng sariling Formspree account.
-      const FORMSPREE_ENDPOINT = ''; // i-update ni Jacey kapag may Formspree na siya
+      const FORMSPREE_ENDPOINT = '';
 
       const validators = {
         name: function (value) {
@@ -959,13 +905,8 @@
         }
       };
 
-      function getFieldWrapper(input) {
-        return input.closest('.form-group');
-      }
-
-      function getErrorSpan(fieldName) {
-        return form.querySelector('[data-error-for="' + fieldName + '"]');
-      }
+      function getFieldWrapper(input) { return input.closest('.form-group'); }
+      function getErrorSpan(fieldName) { return form.querySelector('[data-error-for="' + fieldName + '"]'); }
 
       function showError(fieldName, message) {
         const input = form.querySelector('[name="' + fieldName + '"]');
@@ -986,45 +927,30 @@
       function validateField(fieldName) {
         const input = form.querySelector('[name="' + fieldName + '"]');
         if (!input) return true;
-
         const error = validators[fieldName](input.value);
-        if (error) {
-          showError(fieldName, error);
-          return false;
-        } else {
-          clearError(fieldName);
-          return true;
-        }
+        if (error) { showError(fieldName, error); return false; }
+        else { clearError(fieldName); return true; }
       }
 
       Object.keys(validators).forEach(function (fieldName) {
         const input = form.querySelector('[name="' + fieldName + '"]');
         if (!input) return;
-
         input.addEventListener('blur', function () {
-          if (input.value.trim()) {
-            validateField(fieldName);
-          }
+          if (input.value.trim()) validateField(fieldName);
         });
-
         input.addEventListener('input', function () {
-          if (input.closest('.form-group').classList.contains('has-error')) {
-            validateField(fieldName);
-          }
+          if (input.closest('.form-group').classList.contains('has-error')) validateField(fieldName);
         });
       });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-
         let isValid = true;
         let firstInvalidField = null;
 
         Object.keys(validators).forEach(function (fieldName) {
           const fieldValid = validateField(fieldName);
-          if (!fieldValid && !firstInvalidField) {
-            firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
-          }
+          if (!fieldValid && !firstInvalidField) firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
           if (!fieldValid) isValid = false;
         });
 
@@ -1033,7 +959,6 @@
           return;
         }
 
-        // Kung walang Formspree endpoint, simulated send lang
         if (!FORMSPREE_ENDPOINT) {
           submitBtn.disabled = true;
           const originalText = submitBtn.querySelector('span').textContent;
@@ -1043,60 +968,12 @@
             successBox.classList.add('show');
             form.reset();
             Object.keys(validators).forEach(clearError);
-
             submitBtn.disabled = false;
             submitBtn.querySelector('span').textContent = originalText;
-
-            setTimeout(function () {
-              successBox.classList.remove('show');
-            }, 5000);
+            setTimeout(function () { successBox.classList.remove('show'); }, 5000);
           }, 900);
           return;
         }
-
-        // Kung may Formspree endpoint, tuloy sa send
-        submitBtn.disabled = true;
-        const originalText = submitBtn.querySelector('span').textContent;
-        submitBtn.querySelector('span').textContent = 'Sending...';
-
-        fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            subject: form.subject.value.trim(),
-            message: form.message.value.trim()
-          })
-        })
-        .then(function (response) {
-          if (response.ok) {
-            successBox.classList.add('show');
-            form.reset();
-            Object.keys(validators).forEach(clearError);
-
-            setTimeout(function () {
-              successBox.classList.remove('show');
-            }, 5000);
-          } else {
-            return response.json().then(function (data) {
-              const errorMsg = (data.errors && data.errors[0] && data.errors[0].message)
-                ? data.errors[0].message
-                : 'Something went wrong. Please try again.';
-              alert('Error: ' + errorMsg);
-            });
-          }
-        })
-        .catch(function (error) {
-          alert('Network error: ' + error.message);
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.querySelector('span').textContent = originalText;
-        });
       });
     })();
   </script>
