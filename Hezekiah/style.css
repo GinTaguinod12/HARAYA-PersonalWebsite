@@ -1365,6 +1365,14 @@ section {
   margin: 0 auto;
 }
 
+.project-image {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0.8rem auto 1.2rem;
+  border-radius: 10px;
+}
+
 .project-card {
   background: rgba(45, 40, 10, 0.75);
   border-radius: var(--radius-xl);
@@ -1379,6 +1387,7 @@ section {
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
 }
+
 
 .project-card:hover {
   transform: translateY(-8px) scale(1.01);
